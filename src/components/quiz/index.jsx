@@ -68,6 +68,8 @@ export default class Quiz extends Component {
           }}
           showPrevious={hasPrevious && !finish}
           previous={() => this.previous()}
+          currentQuestion={current + 1}
+          totalQuestions={questions.length}
         />
       </main>
     );

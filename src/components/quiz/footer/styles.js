@@ -13,4 +13,9 @@ export default css`
     width: 100%;
     z-index: 10;
   }
+
+  .progress {
+    color: rgb(129, 129, 129);
+    font-size: 0.7rem;
+  }
 `;
