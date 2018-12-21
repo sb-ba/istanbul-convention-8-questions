@@ -25,7 +25,9 @@ exports.handler = (event, context, callback) => {
       }, {});
 
       Object.keys(averages).forEach(index => {
-        averages[index].average = averages[index].total / averages[index].count;
+        averages[index].average = Math.round(
+          averages[index].total / averages[index].count
+        );
         delete averages[index].total;
       });
 
