@@ -17,7 +17,7 @@ exports.handler = (event, context, callback) => {
 
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify({ average })
+        body: JSON.stringify({ count: values.length, average })
       });
     });
 };
