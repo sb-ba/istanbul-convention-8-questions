@@ -1,10 +1,11 @@
 import css from 'styled-jsx/css';
 
-import { colors } from '../../../tokens';
-
 export default css`
+  .question {
+    color: white;
+  }
+
   .title {
-    color: ${colors.brand};
     font-size: 1.4rem;
   }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Footer from './footer';
-import Header from './header';
+import Header from '../header';
 import Results from './results';
 import Question from './question';
 
@@ -35,7 +35,7 @@ export default class Quiz extends Component {
   };
 
   render() {
-    const { questions } = this.props;
+    const { questions, languages } = this.props;
     const { current, finish } = this.state;
 
     const hasNext = !!questions[current + 1];
@@ -45,7 +45,7 @@ export default class Quiz extends Component {
       <main>
         <style jsx>{styles}</style>
 
-        <Header items={[['/', 'Home']]} />
+        <Header items={[['/', 'Home']]} languages={languages} />
 
         {!finish ? (
           <div className="question-container">

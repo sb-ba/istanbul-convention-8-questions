@@ -3,13 +3,13 @@ import React from 'react';
 import styles from './styles';
 
 export default ({ items }) => (
-  <header>
+  <ul>
     <style jsx>{styles}</style>
 
-    {items.map(([url, label]) => (
-      <a href={url} className="nav-link">
-        {label}
-      </a>
+    {items.map(language => (
+      <li>
+        <a href={`/${language}/`}>{language}</a>
+      </li>
     ))}
-  </header>
+  </ul>
 );

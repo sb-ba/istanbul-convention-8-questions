@@ -5,7 +5,7 @@ const createLocalizedQuiz = (graphql, createPage) => {
   const getDirectories = p =>
     readdirSync(p).filter(f => statSync(path.join(p, f)).isDirectory());
 
-  const createQuiz = language =>
+  const createQuiz = (language, languages) =>
     graphql(`
     query {
       questions: allMarkdownRemark(
@@ -31,14 +31,17 @@ const createLocalizedQuiz = (graphql, createPage) => {
         path: `/${language}/`,
         component: path.resolve('src/templates/quiz/index.jsx'),
         context: {
-          questions: edges
+          questions: edges,
+          languages
         }
       });
     });
 
   const languages = getDirectories('./data/questions');
 
-  return Promise.all(languages.map(language => createQuiz(language)));
+  return Promise.all(
+    languages.map(language => createQuiz(language, languages))
+  );
 };
 
 exports.onCreateNode = ({ node, actions }) => {
