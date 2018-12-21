@@ -8,11 +8,12 @@ exports.handler = (event, context, callback) => {
     .then(res => res.json())
     .then(data => {
       const { values } = data;
-      const average = values.reduce((acc, current) => {
-        // eslint-disable-next-line no-param-reassign
-        acc += parseInt(current[0], 10);
-        return acc;
-      }, 0);
+      const average =
+        values.reduce((acc, current) => {
+          // eslint-disable-next-line no-param-reassign
+          acc += parseInt(current[0], 10);
+          return acc;
+        }, 0) / values.length;
 
       callback(null, {
         statusCode: 200,
