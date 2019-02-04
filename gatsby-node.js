@@ -24,11 +24,10 @@ const createLocalizedQuiz = (graphql, createPage) => {
       }
     }
   `).then(({ data: { questions: { edges } } }) => {
-      // eslint-disable-next-line no-console
-      console.log('Create quiz:', language);
+      const url = language === 'en' ? '/' : `/${language}/`;
 
       return createPage({
-        path: `/${language}/`,
+        path: url,
         component: path.resolve('src/templates/quiz/index.jsx'),
         context: {
           questions: edges,

@@ -1,19 +1,26 @@
 import css from 'styled-jsx/css';
 
+import { colors } from '../../../tokens';
+
 export default css`
   .question {
-    color: white;
+    color: ${colors.brand};
+  }
+
+  .title-container {
+    display: flex;
+    flex-direction: row;
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
-  label {
-    display: block;
+  .current {
+    margin-right: 1.5rem;
   }
 
-  label + label {
-    margin-top: 1rem;
+  .slider-container {
+    margin: 1.5rem 0;
   }
 `;
