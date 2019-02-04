@@ -5,7 +5,7 @@ import React from 'react';
 import styles from './styles';
 
 export default ({ frontmatter: { title, answers = [] } }) => (
-  <div>
+  <div className="question">
     <style jsx>{styles}</style>
     <h1 className="title">{title}</h1>
 

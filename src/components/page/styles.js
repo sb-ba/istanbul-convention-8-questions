@@ -2,7 +2,13 @@ import css from 'styled-jsx/css';
 
 export default css`
   main {
-    background-color: white;
-    margin: 0.5rem 1.5rem;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    padding: 1.5rem;
+  }
+
+  h1:first-child {
+    margin-top: 1.5rem;
   }
 `;

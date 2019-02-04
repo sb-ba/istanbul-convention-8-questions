@@ -1,5 +1,7 @@
 import css from 'styled-jsx/css';
 
+import { colors } from '../../tokens';
+
 export default css`
   :global(html) {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
@@ -7,7 +9,7 @@ export default css`
   }
 
   :global(body) {
-    background-color: rgb(248, 248, 248);
+    background: ${colors.brand};
     margin: 0;
     padding: 0;
   }

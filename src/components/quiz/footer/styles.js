@@ -2,6 +2,7 @@ import css from 'styled-jsx/css';
 
 export default css`
   nav {
+    align-items: center;
     background: white;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     bottom: 0;
@@ -16,6 +17,6 @@ export default css`
 
   .progress {
     color: rgb(129, 129, 129);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 `;
