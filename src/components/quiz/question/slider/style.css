@@ -1,0 +1,24 @@
+.rc-slider {
+  height: 2.5rem;
+  position: relative;
+  touch-action: none;
+}
+
+.rc-slider-rail,
+.rc-slider-track {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.rc-slider-handle {
+  background-color: red;
+  cursor: grab;
+  height: 3.5rem;
+  outline: none;
+  position: absolute;
+  top: -0.5rem;
+  touch-action: pan-x;
+  transform: translateX(-0.125rem);
+  width: 0.25rem;
+}

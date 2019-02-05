@@ -4,13 +4,13 @@ import { colors } from '../../../../tokens';
 
 export default css`
   button {
-    background: ${colors.brand};
+    background: ${colors.darkGrey};
     border: none;
-    border: 2px solid ${colors.brand};
-    border-radius: 3px;
     color: white;
     font-size: 0.9rem;
     padding: 0.5rem;
+    text-transform: uppercase;
+    width: 50%;
   }
 
   button:hover,
@@ -20,8 +20,6 @@ export default css`
   }
 
   button[disabled] {
-    background: white;
-    border-color: rgb(227, 227, 227);
-    color: rgb(227, 227, 227);
+    background: ${colors.darkGrey};
   }
 `;

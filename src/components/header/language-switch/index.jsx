@@ -1,14 +1,21 @@
+import Link from 'gatsby-link';
 import React from 'react';
 
-import styles from './styles';
+import styles, { linkStyle } from './styles';
 
 export default ({ items }) => (
   <ul>
     <style jsx>{styles}</style>
+    {linkStyle.styles}
 
     {items.map(language => (
       <li>
-        <a href={`/${language}/`}>{language}</a>
+        <Link
+          to={language === 'en' ? '/' : `/${language}/`}
+          className={linkStyle.className}
+        >
+          {language}
+        </Link>
       </li>
     ))}
   </ul>

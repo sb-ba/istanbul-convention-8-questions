@@ -4,14 +4,7 @@ import Button from './button';
 
 import styles from './styles';
 
-export default ({
-  showPrevious,
-  showNext,
-  previous,
-  next,
-  currentQuestion,
-  totalQuestions
-}) => (
+export default ({ showPrevious, showNext, previous, next }) => (
   <nav>
     <style jsx>{styles}</style>
 
@@ -24,10 +17,6 @@ export default ({
     >
       Previous
     </Button>
-
-    <small className="progress">
-      Question {currentQuestion} / {totalQuestions}
-    </small>
 
     {showNext && (
       <Button
