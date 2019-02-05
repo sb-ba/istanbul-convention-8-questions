@@ -6,22 +6,49 @@ import Slider from './slider';
 
 import styles from './styles';
 
-export default ({ currentQuestion, frontmatter: { title, answers = [] } }) => (
-  <div className="question">
-    <style jsx>{styles}</style>
+export default class Question extends React.Component {
+  state = {
+    answerResults: [33, 33, 33]
+  };
 
-    <h1 className="title-container">
-      <div className="current">{currentQuestion}</div>
+  updateResultForAnswers = data => {
+    this.setState(state => ({
+      ...state,
+      answerResults: data
+    }));
+  };
 
-      <div className="title">{title}</div>
-    </h1>
+  render() {
+    const {
+      currentQuestion,
+      frontmatter: { title, answers = [] }
+    } = this.props;
+    const { answerResults } = this.state;
 
-    <div className="slider-container">
-      <Slider />
-    </div>
+    return (
+      <div className="question">
+        <style jsx>{styles}</style>
 
-    {answers.map((answer, index) => (
-      <Answer index={index}>{answer}</Answer>
-    ))}
-  </div>
-);
+        <h1 className="title-container">
+          <div className="current">{currentQuestion}</div>
+
+          <div className="title">{title}</div>
+        </h1>
+
+        <div className="slider-container">
+          <Slider
+            onChange={data => {
+              this.updateResultForAnswers(data);
+            }}
+          />
+        </div>
+
+        {answers.map((answer, index) => (
+          <Answer index={index} result={answerResults[index]}>
+            {answer}
+          </Answer>
+        ))}
+      </div>
+    );
+  }
+}
