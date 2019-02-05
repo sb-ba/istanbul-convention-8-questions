@@ -1,5 +1,7 @@
 import css from 'styled-jsx/css';
 
+import { colors, fonts } from '../../../../tokens';
+
 export default css`
   .numbered-results {
     display: flex;
@@ -8,9 +10,11 @@ export default css`
   }
 
   .result {
-    color: red;
+    color: ${colors.red};
     flex: 1;
-    font-size: 0.6rem;
+    font-family: ${fonts.openSans.family};
+    font-size: 0.875rem;
+    font-weight: ${fonts.openSans.weight.bold};
     text-align: center;
   }
 `;

@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-import { colors } from '../../../../tokens';
+import { colors, fonts } from '../../../../tokens';
 
 export default css`
   .answer {
@@ -28,6 +28,9 @@ export default css`
   p {
     display: flex;
     flex-direction: row;
+    font-family: ${fonts.openSans.family};
+    font-size: 0.8125rem;
+    font-weight: ${fonts.openSans.weight.semibold};
     margin-bottom: 0;
     margin-top: 0;
     position: relative;
@@ -35,8 +38,9 @@ export default css`
   }
 
   .index {
-    font-size: 2rem;
-    margin-right: 1rem;
+    font-family: ${fonts.bitter.family};
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
   }
 
   .progress {

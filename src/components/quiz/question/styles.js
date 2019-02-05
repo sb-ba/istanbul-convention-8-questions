@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-import { colors } from '../../../tokens';
+import { colors, fonts } from '../../../tokens';
 
 export default css`
   .question {
@@ -13,10 +13,13 @@ export default css`
   }
 
   .title {
+    font-family: ${fonts.openSans.family};
     font-size: 1rem;
   }
 
   .current {
+    font-family: ${fonts.bitter.family};
+    font-size: 2.5rem;
     margin-right: 1.5rem;
   }
 

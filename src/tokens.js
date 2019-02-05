@@ -8,3 +8,20 @@ export const colors = {
   darkGrey: '#4A4A4A',
   red: '#D4310D'
 };
+
+export const fonts = {
+  bitter: {
+    family: 'Bitter, serif',
+    weight: {
+      bold: 700
+    }
+  },
+
+  openSans: {
+    family: 'Open Sans, sans-serif',
+    weight: {
+      semibold: 600,
+      bold: 700
+    }
+  }
+};
