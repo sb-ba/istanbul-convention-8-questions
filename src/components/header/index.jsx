@@ -5,7 +5,7 @@ import LanguageSwitch from './language-switch';
 
 import styles, { linkStyles } from './styles';
 
-export default ({ items, languages }) => (
+export default ({ items, language, languages }) => (
   <header>
     <style jsx>{styles}</style>
     {linkStyles.styles}
@@ -16,6 +16,6 @@ export default ({ items, languages }) => (
       </Link>
     ))}
 
-    <LanguageSwitch items={languages} />
+    <LanguageSwitch current={language} items={languages} />
   </header>
 );

@@ -3,12 +3,20 @@ import css from 'styled-jsx/css';
 import React from 'react';
 
 export default css`
+  .language-switch {
+    position: relative;
+  }
+
   ul {
     display: flex;
     flex-wrap: nowrap;
+    left: 0;
     list-style: none;
     margin: 0;
     padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
   }
 
   li + li {

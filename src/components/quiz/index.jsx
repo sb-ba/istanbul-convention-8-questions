@@ -84,7 +84,7 @@ export default class Quiz extends Component {
   };
 
   render() {
-    const { questions, languages } = this.props;
+    const { questions, language, languages } = this.props;
     const { current, finish, hideIntro } = this.state;
 
     const hasNext = !!questions[current + 1];
@@ -94,7 +94,11 @@ export default class Quiz extends Component {
       <main>
         <style jsx>{styles}</style>
 
-        <Header items={[['/', 'Home']]} languages={languages} />
+        <Header
+          items={[['/', 'Home']]}
+          language={language}
+          languages={languages}
+        />
 
         <Progress current={current} total={questions.length} />
 

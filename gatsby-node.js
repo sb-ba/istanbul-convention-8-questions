@@ -32,6 +32,7 @@ const createLocalizedQuiz = (graphql, createPage) => {
         component: path.resolve('src/templates/quiz/index.jsx'),
         context: {
           questions: edges,
+          language,
           languages
         }
       });
