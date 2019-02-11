@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+
 import React from 'react';
 import { Range } from 'rc-slider';
 
@@ -39,8 +41,6 @@ export default class Slider extends React.Component {
     return (
       <>
         <Range
-          count={100}
-          defaultValue={[33, 66]}
           pushable
           trackStyle={[
             { backgroundColor: colors.answer2 },
@@ -61,7 +61,11 @@ export default class Slider extends React.Component {
           <style jsx>{style}</style>
 
           {results.map((value, index) => (
-            <div style={{ flexBasis: `${results[index]}%` }} className="result">
+            <div
+              key={`result-indicator-${index}`}
+              style={{ flexBasis: `${results[index]}%` }}
+              className="result"
+            >
               {value}%
             </div>
           ))}

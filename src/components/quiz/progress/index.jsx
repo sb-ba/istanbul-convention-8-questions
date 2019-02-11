@@ -9,7 +9,7 @@ export default ({ current, total }) => {
 
   // eslint-disable-next-line no-plusplus
   for (let index = 0; index <= total; ++index) {
-    steps.push(<Step active={index <= current} />);
+    steps.push(<Step key={`progress-${index}`} active={index <= current} />);
   }
 
   return (

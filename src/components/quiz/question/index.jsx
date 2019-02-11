@@ -47,6 +47,9 @@ export default class Question extends React.Component {
 
         <div className="slider-container">
           <Slider
+            defaultValue={[33, 66]}
+            max={100}
+            min={0}
             onChange={data => {
               this.updateResultForAnswers(data);
               storeAnswer(data);
@@ -55,7 +58,7 @@ export default class Question extends React.Component {
         </div>
 
         {answers.map((answer, index) => (
-          <Answer index={index} result={answerResults[index]}>
+          <Answer key={answer} index={index} result={answerResults[index]}>
             {answer}
           </Answer>
         ))}

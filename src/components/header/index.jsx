@@ -11,7 +11,7 @@ export default ({ items, languages }) => (
     {linkStyles.styles}
 
     {items.map(([url, label]) => (
-      <Link to={url} className={linkStyles.className}>
+      <Link key={`nav-${label}`} to={url} className={linkStyles.className}>
         {label}
       </Link>
     ))}

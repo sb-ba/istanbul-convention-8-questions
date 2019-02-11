@@ -9,7 +9,7 @@ export default ({ items }) => (
     {linkStyle.styles}
 
     {items.map(language => (
-      <li>
+      <li key={`language-${language}`}>
         <Link
           to={language === 'en' ? '/' : `/${language}/`}
           className={linkStyle.className}
