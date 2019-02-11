@@ -100,7 +100,10 @@ export default class Quiz extends Component {
           languages={languages}
         />
 
-        <Progress current={current} total={questions.length} />
+        <Progress
+          current={finish ? questions.length : current}
+          total={questions.length}
+        />
 
         {current === 0 && (
           <Modal isOpen={!hideIntro}>
@@ -138,7 +141,7 @@ export default class Quiz extends Component {
           </div>
         ) : (
           <div className="result-container">
-            <Results />
+            <Results questions={questions} />
           </div>
         )}
 

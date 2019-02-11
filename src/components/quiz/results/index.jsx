@@ -1,5 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import Page from '../../page';
+export default ({ questions }) => {
+  // eslint-disable-next-line no-unused-vars
+  const [data, setData] = useState(null);
 
-export default () => <Page title="Results" />;
+  useEffect(() => {
+    fetch('/.netlify/functions/read-answers')
+      .then(res => res.json())
+      .then(setData);
+  }, []);
+
+  return (
+    <ul>
+      {questions.map(({ node: { frontmatter: { id, title, answers } } }) => (
+        <li key={`question-result-${id}`}>
+          <h2>{title}</h2>
+
+          <ul>
+            {answers.map(answer => (
+              <li key={answer}>{answer}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  );
+};
