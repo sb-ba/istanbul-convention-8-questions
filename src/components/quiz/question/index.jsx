@@ -50,31 +50,33 @@ export default class Question extends Component {
         </h1>
 
         <div className="slider-container">
-          <Suspense
-            fallback={<div className={sliderFallbackStyles.className} />}
-          >
-            <Slider
-              defaultValue={[33, 66]}
-              max={100}
-              min={0}
-              onChange={(data, rawData) => {
-                this.updateResultForAnswers(data, rawData);
-                storeAnswer(data);
-              }}
-            />
+          {typeof window !== 'undefined' && (
+            <Suspense
+              fallback={<div className={sliderFallbackStyles.className} />}
+            >
+              <Slider
+                defaultValue={[33, 66]}
+                max={100}
+                min={0}
+                onChange={(data, rawData) => {
+                  this.updateResultForAnswers(data, rawData);
+                  storeAnswer(data);
+                }}
+              />
 
-            <div className="numbered-results">
-              {answerResults.map((value, index) => (
-                <div
-                  key={`result-indicator-${index}`}
-                  style={{ flexBasis: `${answerResults[index]}%` }}
-                  className="result"
-                >
-                  {value}%
-                </div>
-              ))}
-            </div>
-          </Suspense>
+              <div className="numbered-results">
+                {answerResults.map((value, index) => (
+                  <div
+                    key={`result-indicator-${index}`}
+                    style={{ flexBasis: `${answerResults[index]}%` }}
+                    className="result"
+                  >
+                    {value}%
+                  </div>
+                ))}
+              </div>
+            </Suspense>
+          )}
         </div>
 
         {answers.map((answer, index) => (
