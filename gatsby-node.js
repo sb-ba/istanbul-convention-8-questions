@@ -16,6 +16,7 @@ const createLocalizedQuiz = (graphql, createPage) => {
         edges {
           node {
             frontmatter {
+              id
               title
               answers
             }

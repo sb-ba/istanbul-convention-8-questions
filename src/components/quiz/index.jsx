@@ -15,8 +15,6 @@ const persistAnswers = (questionId, data) => {
     answers: data
   };
 
-  console.log('payload', payload);
-
   return fetch('/.netlify/functions/write-answers', {
     method: 'POST',
     body: JSON.stringify(payload),
@@ -73,9 +71,11 @@ export default class Quiz extends Component {
   };
 
   next = () => {
+    const { questions } = this.props;
     const { answers, current } = this.state;
+    const { id: questionId } = questions[current].node.frontmatter;
 
-    persistAnswers(current, answers).then(() => {
+    persistAnswers(questionId, answers).then(() => {
       this.setState(state => ({
         ...state,
         current: state.current + 1
