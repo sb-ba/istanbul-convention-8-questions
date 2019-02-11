@@ -120,7 +120,7 @@ export default class Quiz extends Component {
         )}
 
         {!finish ? (
-          <div className="question-container">
+          <div className="question-container" key={`question-${current}`}>
             <Question
               currentQuestion={current + 1}
               storeAnswer={answers => {
