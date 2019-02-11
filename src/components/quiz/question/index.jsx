@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
 /* eslint-disable react/no-array-index-key */
 
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
 import Answer from './answer';
-import Slider from './slider';
 
-import styles from './styles';
+import styles, { sliderFallbackStyles } from './styles';
+
+const Slider = React.lazy(() => import('./slider'));
 
 export default class Question extends Component {
   state = {
@@ -40,6 +41,7 @@ export default class Question extends Component {
     return (
       <div className="question">
         <style jsx>{styles}</style>
+        {sliderFallbackStyles.styles}
 
         <h1 className="title-container">
           <div className="current">{currentQuestion}</div>
@@ -48,27 +50,31 @@ export default class Question extends Component {
         </h1>
 
         <div className="slider-container">
-          <Slider
-            defaultValue={[33, 66]}
-            max={100}
-            min={0}
-            onChange={(data, rawData) => {
-              this.updateResultForAnswers(data, rawData);
-              storeAnswer(data);
-            }}
-          />
+          <Suspense
+            fallback={<div className={sliderFallbackStyles.className} />}
+          >
+            <Slider
+              defaultValue={[33, 66]}
+              max={100}
+              min={0}
+              onChange={(data, rawData) => {
+                this.updateResultForAnswers(data, rawData);
+                storeAnswer(data);
+              }}
+            />
 
-          <div className="numbered-results">
-            {answerResults.map((value, index) => (
-              <div
-                key={`result-indicator-${index}`}
-                style={{ flexBasis: `${answerResults[index]}%` }}
-                className="result"
-              >
-                {value}%
-              </div>
-            ))}
-          </div>
+            <div className="numbered-results">
+              {answerResults.map((value, index) => (
+                <div
+                  key={`result-indicator-${index}`}
+                  style={{ flexBasis: `${answerResults[index]}%` }}
+                  className="result"
+                >
+                  {value}%
+                </div>
+              ))}
+            </div>
+          </Suspense>
         </div>
 
         {answers.map((answer, index) => (

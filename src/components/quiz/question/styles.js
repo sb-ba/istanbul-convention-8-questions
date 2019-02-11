@@ -1,4 +1,6 @@
 import css from 'styled-jsx/css';
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 
 import { colors, fonts } from '../../../tokens';
 
@@ -41,4 +43,8 @@ export default css`
     font-weight: ${fonts.openSans.weight.bold};
     text-align: center;
   }
+`;
+
+export const sliderFallbackStyles = css.resolve`
+  height: 5.5rem;
 `;
