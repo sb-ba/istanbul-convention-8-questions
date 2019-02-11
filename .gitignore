@@ -62,4 +62,4 @@ typings/
 
 public/
 .cache/
-functions-build/
+public-functions/

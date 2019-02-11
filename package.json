@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "develop": "gatsby develop",
-    "build": "npm run build-functions && gatsby build",
-    "build-functions": "netlify-lambda build functions",
+    "build": "gatsby build && npm run build-functions",
+    "build-functions": "netlify-lambda -c ./webpack.functions.js build functions",
     "serve-functions": "netlify-lambda -c ./webpack.functions.js serve functions",
     "serve": "gatsby serve",
     "lint": "eslint --fix --ext .js,.jsx ."

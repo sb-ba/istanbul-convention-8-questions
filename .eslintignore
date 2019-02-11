@@ -1,4 +1,4 @@
 /node_modules/*
 /.cache/*
 /public/*
-/functions-build/
+/public-functions/
