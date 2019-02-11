@@ -9,8 +9,27 @@ import Question from './question';
 
 import styles from './styles';
 
+const persistAnswers = (questionId, data) => {
+  const payload = {
+    questionId,
+    answers: data
+  };
+
+  console.log('payload', payload);
+
+  return fetch('/.netlify/functions/write-answers', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  });
+};
+
 export default class Quiz extends Component {
   state = {
+    answers: null,
     current: 0,
     finish: false,
     hideIntro: true
@@ -54,10 +73,14 @@ export default class Quiz extends Component {
   };
 
   next = () => {
-    this.setState(state => ({
-      ...state,
-      current: state.current + 1
-    }));
+    const { answers, current } = this.state;
+
+    persistAnswers(current, answers).then(() => {
+      this.setState(state => ({
+        ...state,
+        current: state.current + 1
+      }));
+    });
   };
 
   render() {
@@ -100,6 +123,12 @@ export default class Quiz extends Component {
           <div className="question-container">
             <Question
               currentQuestion={current + 1}
+              storeAnswer={answers => {
+                this.setState(state => ({
+                  ...state,
+                  answers
+                }));
+              }}
               {...questions[current].node}
             />
           </div>

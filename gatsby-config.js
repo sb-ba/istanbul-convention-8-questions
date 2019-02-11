@@ -1,3 +1,5 @@
+const proxy = require('http-proxy-middleware');
+
 module.exports = {
   siteMetadata: {
     title: 'EU sanctions watch',
@@ -28,5 +30,14 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-styled-jsx',
     'gatsby-plugin-react-helmet'
-  ]
+  ],
+
+  developMiddleware: app => {
+    app.use(
+      '/.netlify/functions/',
+      proxy({
+        target: 'http://localhost:9000'
+      })
+    );
+  }
 };

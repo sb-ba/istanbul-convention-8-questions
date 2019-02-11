@@ -11,6 +11,15 @@ export default class Question extends React.Component {
     answerResults: [33, 33, 33]
   };
 
+  constructor(props) {
+    super(props);
+
+    const { storeAnswer } = this.props;
+    const { answerResults } = this.state;
+
+    storeAnswer(answerResults);
+  }
+
   updateResultForAnswers = data => {
     this.setState(state => ({
       ...state,
@@ -21,7 +30,8 @@ export default class Question extends React.Component {
   render() {
     const {
       currentQuestion,
-      frontmatter: { title, answers = [] }
+      frontmatter: { title, answers = [] },
+      storeAnswer
     } = this.props;
     const { answerResults } = this.state;
 
@@ -39,6 +49,7 @@ export default class Question extends React.Component {
           <Slider
             onChange={data => {
               this.updateResultForAnswers(data);
+              storeAnswer(data);
             }}
           />
         </div>
