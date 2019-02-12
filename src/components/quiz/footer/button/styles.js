@@ -9,7 +9,8 @@ export default css`
     color: white;
     font-family: ${fonts.bitter.family};
     font-size: 1rem;
-    padding: 0.5rem;
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
     text-transform: uppercase;
     width: 50%;
   }
