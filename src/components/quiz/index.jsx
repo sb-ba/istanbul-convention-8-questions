@@ -1,8 +1,8 @@
 import Helmet from 'react-helmet';
-import Modal from 'react-modal';
 import React, { Component } from 'react';
 
 import Footer from './footer';
+import Intro from './intro';
 import Header from '../header';
 import Progress from './progress';
 import Results from './results';
@@ -29,22 +29,9 @@ const persistAnswers = (questionId, data) => {
 export default class Quiz extends Component {
   state = {
     answers: null,
-    current: 0,
-    finish: false,
-    hideIntro: true
+    current: -1,
+    finish: false
   };
-
-  componentDidMount() {
-    const hideIntro =
-      window &&
-      window.sessionStorage &&
-      window.sessionStorage.getItem('intro-open') === 'false';
-
-    this.setState(state => ({
-      ...state,
-      hideIntro
-    }));
-  }
 
   finish = () => {
     this.setState(state => ({
@@ -54,13 +41,9 @@ export default class Quiz extends Component {
   };
 
   hideIntro = () => {
-    if (window && window.sessionStorage) {
-      window.sessionStorage.setItem('intro-open', false);
-    }
-
     this.setState(state => ({
       ...state,
-      hideIntro: true
+      current: 0
     }));
   };
 
@@ -86,7 +69,7 @@ export default class Quiz extends Component {
 
   render() {
     const { questions, language, languages } = this.props;
-    const { current, finish, hideIntro } = this.state;
+    const { current, finish } = this.state;
 
     const hasNext = !!questions[current + 1];
     const hasPrevious = !!questions[current - 1];
@@ -111,40 +94,29 @@ export default class Quiz extends Component {
             // reset quiz
             this.setState({
               answers: null,
-              current: 0,
-              finish: false,
-              hideIntro: false
+              current: -1,
+              finish: false
             });
           }}
         />
 
-        <Progress
-          current={finish ? questions.length : current}
-          total={questions.length}
-        />
-
-        {current === 0 && (
-          <Modal isOpen={!hideIntro}>
-            <h1>8 Questions on 8 March</h1>
-            <p>
-              On International Women’s Day we want to know what you think is the
-              best thing about the Istanbul Convention.
-            </p>
-            Give us your views and complete the survey See if other people agree
-            with you
-            <button
-              type="button"
-              onClick={event => {
-                event.preventDefault();
-                this.hideIntro();
-              }}
-            >
-              Start Quiz
-            </button>
-          </Modal>
+        {current >= 0 && (
+          <Progress
+            current={finish ? questions.length : current}
+            total={questions.length}
+          />
         )}
 
-        {!finish ? (
+        {current === -1 && (
+          <Intro
+            onStart={event => {
+              event.preventDefault();
+              this.hideIntro();
+            }}
+          />
+        )}
+
+        {!finish && current >= 0 && (
           <div className="question-container" key={`question-${current}`}>
             <Question
               currentQuestion={current + 1}
@@ -157,13 +129,15 @@ export default class Quiz extends Component {
               {...questions[current].node}
             />
           </div>
-        ) : (
+        )}
+
+        {finish && (
           <div className="result-container">
             <Results questions={questions} />
           </div>
         )}
 
-        {!finish && (
+        {!finish && current >= 0 && (
           <Footer
             next={() => {
               if (hasNext) {
