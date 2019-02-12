@@ -11,18 +11,23 @@ export default ({ questions }) => {
   }, []);
 
   return (
-    <ul>
-      {questions.map(({ node: { frontmatter: { id, title, answers } } }) => (
-        <li key={`question-result-${id}`}>
-          <h2>{title}</h2>
+    <>
+      <h2>Thank you :)</h2>
+      <p>See yours and the average results</p>
 
-          <ul>
-            {answers.map(answer => (
-              <li key={answer}>{answer}</li>
-            ))}
-          </ul>
-        </li>
-      ))}
-    </ul>
+      <ul>
+        {questions.map(({ node: { frontmatter: { id, title, answers } } }) => (
+          <li key={`question-result-${id}`}>
+            <h2>{title}</h2>
+
+            <ul>
+              {answers.map(answer => (
+                <li key={answer}>{answer}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };

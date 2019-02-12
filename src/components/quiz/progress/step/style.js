@@ -5,11 +5,11 @@ import { colors } from '../../../../tokens';
 export default css`
   .step {
     flex: 1;
-    height: 0.5rem;
+    height: 0.35rem;
   }
 
   .step + .step {
-    margin-left: 0.1rem;
+    margin-left: 0.075rem;
   }
 
   .step--is-active {

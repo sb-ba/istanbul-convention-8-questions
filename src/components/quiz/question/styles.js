@@ -6,7 +6,7 @@ import { colors, fonts } from '../../../tokens';
 
 export default css`
   .question {
-    color: ${colors.brand};
+    color: black;
   }
 
   .title-container {
@@ -17,16 +17,19 @@ export default css`
   .title {
     font-family: ${fonts.openSans.family};
     font-size: 1rem;
+    line-height: 1.2;
   }
 
   .current {
     font-family: ${fonts.bitter.family};
     font-size: 2.5rem;
+    line-height: 1;
     margin-right: 1.5rem;
+    padding-left: 0.5rem;
   }
 
   .slider-container {
-    margin: 1.5rem 0;
+    margin: 2rem 0 1.75rem 0;
   }
 
   .numbered-results {

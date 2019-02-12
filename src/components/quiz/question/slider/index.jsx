@@ -24,18 +24,13 @@ const updateResults = (data, callback) => {
 };
 
 export default ({ onChange = () => {}, ...rest }) => (
-  <>
-    <Range
-      pushable
-      trackStyle={[
-        { backgroundColor: colors.answer2 },
-        { backgroundColor: colors.answer3 }
-      ]}
-      railStyle={{ backgroundColor: colors.answer1 }}
-      onChange={data => {
-        updateResults(data, onChange);
-      }}
-      {...rest}
-    />
-  </>
+  <Range
+    pushable
+    trackStyle={[{ backgroundColor: colors.answer2 }]}
+    railStyle={{ backgroundColor: colors.answer1 }}
+    onChange={data => {
+      updateResults(data, onChange);
+    }}
+    {...rest}
+  />
 );

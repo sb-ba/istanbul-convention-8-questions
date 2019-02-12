@@ -3,18 +3,21 @@ import React from 'react';
 
 import LanguageSwitch from './language-switch';
 
-import styles, { linkStyles } from './styles';
+import styles, { logoStyles, linkStyles } from './styles';
 
-export default ({ items, language, languages }) => (
+export default ({ language, languages, title }) => (
   <header>
     <style jsx>{styles}</style>
     {linkStyles.styles}
+    {logoStyles.styles}
 
-    {items.map(([url, label]) => (
-      <Link key={`nav-${label}`} to={url} className={linkStyles.className}>
-        {label}
-      </Link>
-    ))}
+    <Link to="/" className={logoStyles.className}>
+      Council
+      <br /> of
+      <br /> Europe
+    </Link>
+
+    <h1>{title}</h1>
 
     <LanguageSwitch current={language} items={languages} />
   </header>

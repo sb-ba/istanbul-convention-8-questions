@@ -43,11 +43,11 @@ export default class Question extends Component {
         <style jsx>{styles}</style>
         {sliderFallbackStyles.styles}
 
-        <h1 className="title-container">
+        <h2 className="title-container">
           <div className="current">{currentQuestion}</div>
 
           <div className="title">{title}</div>
-        </h1>
+        </h2>
 
         <div className="slider-container">
           {typeof window !== 'undefined' && (

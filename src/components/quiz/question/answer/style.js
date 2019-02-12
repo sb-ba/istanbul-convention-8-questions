@@ -39,7 +39,8 @@ export default css`
 
   .index {
     font-family: ${fonts.bitter.family};
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    line-height: 1;
     margin-right: 1.5rem;
   }
 

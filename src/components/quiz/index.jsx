@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet';
 import Modal from 'react-modal';
 import React, { Component } from 'react';
 
@@ -89,15 +90,21 @@ export default class Quiz extends Component {
 
     const hasNext = !!questions[current + 1];
     const hasPrevious = !!questions[current - 1];
+    const title = finish
+      ? 'Results'
+      : `Question ${current + 1}/${questions.length}`;
 
     return (
       <main>
         <style jsx>{styles}</style>
 
+        <Helmet title={title} />
+
         <Header
           items={[['/', 'Home']]}
           language={language}
           languages={languages}
+          title={title}
         />
 
         <Progress
