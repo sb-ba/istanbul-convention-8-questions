@@ -2,9 +2,7 @@ const proxy = require('http-proxy-middleware');
 
 module.exports = {
   siteMetadata: {
-    title: 'EU sanctions watch',
-    twitter: 'https://twitter.com/CiFAR_EU',
-    facebook: 'https://www.facebook.com/civilforumAR/'
+    title: '8M Survey'
   },
 
   plugins: [
@@ -22,7 +20,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /static/
+          include: /static\/icons/
         }
       }
     },

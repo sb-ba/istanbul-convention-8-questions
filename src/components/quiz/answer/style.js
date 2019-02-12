@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-import { colors, fonts } from '../../../../tokens';
+import { colors, fonts } from '../../../tokens';
 
 export default css`
   .answer {
@@ -23,6 +23,11 @@ export default css`
 
   .answer--index-c {
     background-color: ${colors.answer3};
+  }
+
+  .answer--theme-transparent {
+    background-color: transparent;
+    color: black;
   }
 
   p {

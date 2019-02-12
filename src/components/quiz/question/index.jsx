@@ -3,7 +3,7 @@
 
 import React, { Component, Suspense } from 'react';
 
-import Answer from './answer';
+import Answer from '../answer';
 
 import styles, { sliderFallbackStyles } from './styles';
 
