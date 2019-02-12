@@ -17,7 +17,7 @@ export default ({ language, languages, title, onClickLogo = () => {} }) => (
       <br /> Europe
     </Link>
 
-    <h1>{title}</h1>
+    {title && <h1>{title}</h1>}
 
     <LanguageSwitch current={language} items={languages} />
   </header>

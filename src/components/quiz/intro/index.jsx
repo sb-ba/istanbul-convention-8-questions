@@ -6,7 +6,7 @@ export default ({ onStart }) => (
   <article>
     <style jsx>{style}</style>
 
-    <h2 className="title">8 Questions for the 8th of March</h2>
+    <h1 className="title">8 Questions for the 8th of March</h1>
 
     <p>
       On International Women’s Day we want to know what you think is the best

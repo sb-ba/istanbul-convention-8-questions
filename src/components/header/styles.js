@@ -38,8 +38,13 @@ export const logoStyles = css.resolve`
     color: currentColor;
     font-size: 0.55rem;
     font-family: ${fonts.openSans.family};
-    line-height: 1.2;
+    line-height: 1.25;
     text-decoration: none;
     text-transform: uppercase;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
   }
 `;

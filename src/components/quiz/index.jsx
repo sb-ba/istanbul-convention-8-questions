@@ -81,13 +81,17 @@ export default class Quiz extends Component {
       <main>
         <style jsx>{styles}</style>
 
-        <Helmet title={title} />
+        {current >= 0 ? (
+          <Helmet title={title} />
+        ) : (
+          <Helmet title="8 Questions for the 8th of March" />
+        )}
 
         <Header
           items={[['/', 'Home']]}
           language={language}
           languages={languages}
-          title={title}
+          title={current >= 0 && title}
           onClickLogo={event => {
             event.preventDefault();
 
