@@ -8,7 +8,7 @@ export default css`
     display: flex;
     justify-content: space-between;
     left: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 10;
   }

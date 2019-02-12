@@ -2,7 +2,6 @@ import css from 'styled-jsx/css';
 
 export default css`
   main {
-    height: 100vh;
     position: relative;
   }
 

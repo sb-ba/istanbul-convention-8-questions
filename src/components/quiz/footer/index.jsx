@@ -4,7 +4,7 @@ import Button from './button';
 
 import styles from './styles';
 
-export default ({ showPrevious, showNext, previous, next }) => (
+export default ({ showPrevious, previous, next }) => (
   <nav>
     <style jsx>{styles}</style>
 
@@ -18,15 +18,13 @@ export default ({ showPrevious, showNext, previous, next }) => (
       Previous
     </Button>
 
-    {showNext && (
-      <Button
-        onClick={event => {
-          event.preventDefault();
-          next();
-        }}
-      >
-        Next
-      </Button>
-    )}
+    <Button
+      onClick={event => {
+        event.preventDefault();
+        next();
+      }}
+    >
+      Next
+    </Button>
   </nav>
 );

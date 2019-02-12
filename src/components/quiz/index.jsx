@@ -163,18 +163,19 @@ export default class Quiz extends Component {
           </div>
         )}
 
-        <Footer
-          showNext={!finish}
-          next={() => {
-            if (hasNext) {
-              this.next();
-            } else {
-              this.finish();
-            }
-          }}
-          showPrevious={hasPrevious && !finish}
-          previous={() => this.previous()}
-        />
+        {!finish && (
+          <Footer
+            next={() => {
+              if (hasNext) {
+                this.next();
+              } else {
+                this.finish();
+              }
+            }}
+            showPrevious={hasPrevious && !finish}
+            previous={() => this.previous()}
+          />
+        )}
       </main>
     );
   }
