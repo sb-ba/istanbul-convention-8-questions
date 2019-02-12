@@ -56,6 +56,25 @@ export default css`
     margin: 0;
     padding: 0;
   }
+
+  .convention-text {
+    background-color: ${colors.lightGrey};
+    font-family: ${fonts.openSans.family};
+    font-size: 1rem;
+    font-weight: ${fonts.openSans.weight.semiBold};
+    margin-left: -1rem;
+    margin-right: -1rem;
+    line-height: 1.4;
+    padding: 1.5rem;
+  }
+
+  :global(.convention-text > *:first-child) {
+    margin-top: 0;
+  }
+
+  :global(.convention-text > *:last-child) {
+    margin-bottom: 0;
+  }
 `;
 
 export const checkIconStyle = css.resolve`

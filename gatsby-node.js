@@ -20,6 +20,7 @@ const createLocalizedQuiz = (graphql, createPage) => {
               title
               answers
             }
+            html
           }
         }
       }

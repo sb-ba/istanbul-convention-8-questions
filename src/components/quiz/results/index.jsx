@@ -35,19 +35,33 @@ export default ({ questions }) => {
       <h2 className="answers-title">See yours and the average results</h2>
 
       <ul>
-        {questions.map(({ node: { frontmatter: { id, title, answers } } }) => (
-          <li key={`question-result-${id}`}>
-            <h2 className="question-title">{title}</h2>
+        {questions.map(
+          ({
+            node: {
+              frontmatter: { id, title, answers },
+              html: text
+            }
+          }) => (
+            <li key={`question-result-${id}`}>
+              <h2 className="question-title">{title}</h2>
 
-            <ul>
-              {answers.map((answer, index) => (
-                <Answer key={answer} index={index} theme="transparent">
-                  {answer}
-                </Answer>
-              ))}
-            </ul>
-          </li>
-        ))}
+              <ul>
+                {answers.map((answer, index) => (
+                  <Answer key={answer} index={index} theme="transparent">
+                    {answer}
+                  </Answer>
+                ))}
+              </ul>
+
+              {text && (
+                <div
+                  className="convention-text"
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
+              )}
+            </li>
+          )
+        )}
       </ul>
 
       <Share />
