@@ -7,7 +7,7 @@ const mysql = require('serverless-mysql')({
   }
 });
 
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context, callback) => {
   const groupByQuestion = results =>
     results.reduce((acc, current) => {
       const { questionId, answers } = current;
@@ -76,13 +76,13 @@ exports.handler = (event, context, callback) => {
     )
     .then(results => groupByQuestion(results))
     .then(grouped => {
-      callback(null, {
+      return callback(null, {
         statusCode: 200,
         body: JSON.stringify(createAverages(grouped))
       });
     })
     .catch(err => {
-      callback(err, {
+      return callback(err, {
         statusCode: 500
       });
     });
