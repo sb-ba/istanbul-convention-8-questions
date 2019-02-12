@@ -5,13 +5,13 @@ import LanguageSwitch from './language-switch';
 
 import styles, { logoStyles, linkStyles } from './styles';
 
-export default ({ language, languages, title }) => (
+export default ({ language, languages, title, onClickLogo = () => {} }) => (
   <header>
     <style jsx>{styles}</style>
     {linkStyles.styles}
     {logoStyles.styles}
 
-    <Link to="/" className={logoStyles.className}>
+    <Link to="/" className={logoStyles.className} onClick={onClickLogo}>
       Council
       <br /> of
       <br /> Europe

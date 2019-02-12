@@ -105,6 +105,17 @@ export default class Quiz extends Component {
           language={language}
           languages={languages}
           title={title}
+          onClickLogo={event => {
+            event.preventDefault();
+
+            // reset quiz
+            this.setState({
+              answers: null,
+              current: 0,
+              finish: false,
+              hideIntro: false
+            });
+          }}
         />
 
         <Progress

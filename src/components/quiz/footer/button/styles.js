@@ -20,11 +20,19 @@ export default css`
 
   button:hover,
   button:focus {
-    background-color: white;
-    color: ${colors.brand};
+    background-color: ${colors.red};
+    cursor: pointer;
   }
 
   button[disabled] {
+    color: rgb(152, 152, 152);
+    opacity: 0.8;
+  }
+
+  button[disabled]:hover,
+  button[disabled]:focus {
     background: ${colors.darkGrey};
+    color: rgb(152, 152, 152);
+    cursor: default;
   }
 `;
