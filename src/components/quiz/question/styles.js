@@ -10,6 +10,7 @@ export default css`
   }
 
   .title-container {
+    align-items: center;
     display: flex;
     flex-direction: row;
   }

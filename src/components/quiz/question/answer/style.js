@@ -26,6 +26,7 @@ export default css`
   }
 
   p {
+    align-items: center;
     display: flex;
     flex-direction: row;
     font-family: ${fonts.openSans.family};
@@ -39,7 +40,7 @@ export default css`
 
   .index {
     font-family: ${fonts.bitter.family};
-    font-size: 2.25rem;
+    font-size: 2rem;
     line-height: 1;
     margin-right: 1.5rem;
   }
