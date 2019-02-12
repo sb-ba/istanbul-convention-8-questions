@@ -80,5 +80,10 @@ exports.handler = (event, context, callback) => {
         statusCode: 200,
         body: JSON.stringify(createAverages(grouped))
       });
+    })
+    .catch(err => {
+      callback(err, {
+        statusCode: 500
+      });
     });
 };
