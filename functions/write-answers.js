@@ -14,8 +14,9 @@ exports.handler = async (event, context, callback) => {
 
   const { questionId, answers } = JSON.parse(event.body);
 
-  await mysql.query(
-    `
+  mysql
+    .query(
+      `
     INSERT INTO answers (
       questionId,
       answers
@@ -24,10 +25,16 @@ exports.handler = async (event, context, callback) => {
       '${JSON.stringify(answers)}'
     );
   `
-  );
-
-  callback(null, {
-    statusCode: 204,
-    body: ''
-  });
+    )
+    .then(() => {
+      callback(null, {
+        statusCode: 204,
+        body: ''
+      });
+    })
+    .catch(err => {
+      callback(err, {
+        statusCode: 500
+      });
+    });
 };
