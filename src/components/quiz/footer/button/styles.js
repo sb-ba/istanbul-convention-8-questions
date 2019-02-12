@@ -8,7 +8,8 @@ export default css`
     border: none;
     color: white;
     font-family: ${fonts.bitter.family};
-    font-size: 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.02rem;
     padding-bottom: 0.75rem;
     padding-top: 0.75rem;
     text-transform: uppercase;
