@@ -32,8 +32,9 @@ export default css`
     display: flex;
     flex-direction: row;
     font-family: ${fonts.openSans.family};
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: ${fonts.openSans.weight.semibold};
+    line-height: 1.3;
     margin-bottom: 0;
     margin-top: 0;
     position: relative;

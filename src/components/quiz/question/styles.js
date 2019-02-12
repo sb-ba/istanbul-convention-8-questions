@@ -17,7 +17,7 @@ export default css`
 
   .title {
     font-family: ${fonts.openSans.family};
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.2;
   }
 

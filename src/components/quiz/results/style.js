@@ -44,7 +44,7 @@ export default css`
     background-color: ${colors.darkGrey};
     color: white;
     font-family: ${fonts.openSans.family};
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     margin-left: -1rem;
     margin-right: -1rem;
