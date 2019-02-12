@@ -14,7 +14,7 @@ export default ({ showPrevious, previous, next, isLoading = false }) => (
         event.preventDefault();
         previous();
       }}
-      disabled={!showPrevious}
+      disabled={!showPrevious || isLoading === 'previous'}
     >
       {isLoading === 'previous' ? <Spinner /> : <>Previous</>}
     </Button>
@@ -24,6 +24,7 @@ export default ({ showPrevious, previous, next, isLoading = false }) => (
         event.preventDefault();
         next();
       }}
+      disabled={isLoading === 'next'}
     >
       {isLoading === 'next' ? <Spinner /> : <>Next</>}
     </Button>
