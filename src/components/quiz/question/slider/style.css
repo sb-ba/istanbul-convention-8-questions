@@ -15,7 +15,7 @@
 .rc-slider-rail::after,
 .rc-slider-track::before {
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-family: Bitter, serif;
   position: absolute;
   top: 50%;
@@ -39,9 +39,10 @@
 }
 
 .rc-slider-handle {
-  background-color: #D4310D;
+  background-color: currentColor;
   border-radius: 0.15rem;
   box-shadow: 0 0 2px rgba(0, 0, 0, .4);
+  color: #D4310D;
   cursor: grab;
   height: 3.85rem;
   outline: none;
@@ -50,4 +51,40 @@
   touch-action: pan-x;
   transform: translateX(-0.25rem);
   width: 0.5rem;
+}
+
+.rc-slider-handle::before,
+.rc-slider-handle::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 400ms ease;
+}
+
+.rc-slider-handle::before {
+  border-width: 0.55rem 0.55rem 0.55rem 0;
+  border-color: transparent currentColor transparent transparent;
+  left: -0.9rem;
+}
+
+.rc-slider-handle::after {
+  border-width: 0.55rem 0 0.55rem 0.55rem;
+  border-color: transparent transparent transparent currentColor;
+  right: -0.9rem;
+}
+
+@media (hover: hover) {
+  .rc-slider-handle::before,
+  .rc-slider-handle::after {
+    opacity: 0;
+  }
+
+  .rc-slider-handle:hover::before,
+  .rc-slider-handle:hover::after {
+    opacity: 1;
+  }
 }
