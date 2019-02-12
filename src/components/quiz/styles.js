@@ -3,7 +3,6 @@ import css from 'styled-jsx/css';
 export default css`
   main {
     position: relative;
-    padding-bottom: 4rem; /* accommodate the buttons */
   }
 
   .question-container {

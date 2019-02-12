@@ -7,6 +7,8 @@ import { colors, fonts } from '../../../tokens';
 export default css`
   .question {
     color: black;
+    min-height: 85vh;
+    padding-bottom: 5rem; /* accommodate the buttons */
   }
 
   .title-container {
