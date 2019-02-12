@@ -16,7 +16,9 @@ export default ({ index = 0, result, children, theme, ...rest }) => (
   >
     <style jsx>{style}</style>
 
-    {result && <div className="progress" style={{ width: `${result}%` }} />}
+    {result !== 0 && (
+      <div className="progress" style={{ width: `${result}%` }} />
+    )}
 
     <p>
       <strong className="index">{ALPHABET[index]}</strong>

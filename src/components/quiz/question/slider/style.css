@@ -11,6 +11,33 @@
   width: 100%;
 }
 
+.rc-slider-rail::before,
+.rc-slider-rail::after,
+.rc-slider-track::before {
+  color: white;
+  font-size: 0.8rem;
+  font-family: Bitter, serif;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rc-slider-rail::before {
+  content: 'A';
+  left: 1.5rem;
+}
+
+.rc-slider-rail::after {
+  content: 'C';
+  right: 1.5rem;
+}
+
+.rc-slider-track::before {
+  content: 'B';
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .rc-slider-handle {
   background-color: #D4310D;
   border-radius: 0.15rem;
