@@ -1,10 +1,11 @@
 import React from 'react';
 
 import Button from './button';
+import Spinner from './spinner';
 
 import styles from './styles';
 
-export default ({ showPrevious, previous, next }) => (
+export default ({ showPrevious, previous, next, isLoading = false }) => (
   <nav>
     <style jsx>{styles}</style>
 
@@ -15,7 +16,7 @@ export default ({ showPrevious, previous, next }) => (
       }}
       disabled={!showPrevious}
     >
-      Previous
+      {isLoading === 'previous' ? <Spinner /> : <>Previous</>}
     </Button>
 
     <Button
@@ -24,7 +25,7 @@ export default ({ showPrevious, previous, next }) => (
         next();
       }}
     >
-      Next
+      {isLoading === 'next' ? <Spinner /> : <>Next</>}
     </Button>
   </nav>
 );

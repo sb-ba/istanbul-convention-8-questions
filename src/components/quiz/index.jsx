@@ -30,7 +30,8 @@ export default class Quiz extends Component {
   state = {
     answers: null,
     current: -1,
-    finish: false
+    finish: false,
+    isLoading: false
   };
 
   finish = () => {
@@ -48,10 +49,22 @@ export default class Quiz extends Component {
   };
 
   previous = () => {
+    const { questions } = this.props;
+    const { answers, current } = this.state;
+    const { id: questionId } = questions[current].node.frontmatter;
+
     this.setState(state => ({
       ...state,
-      current: state.current - 1
+      isLoading: 'previous'
     }));
+
+    persistAnswers(questionId, answers).then(() => {
+      this.setState(state => ({
+        ...state,
+        current: state.current - 1,
+        isLoading: false
+      }));
+    });
   };
 
   next = () => {
@@ -59,17 +72,23 @@ export default class Quiz extends Component {
     const { answers, current } = this.state;
     const { id: questionId } = questions[current].node.frontmatter;
 
+    this.setState(state => ({
+      ...state,
+      isLoading: 'next'
+    }));
+
     persistAnswers(questionId, answers).then(() => {
       this.setState(state => ({
         ...state,
-        current: state.current + 1
+        current: state.current + 1,
+        isLoading: false
       }));
     });
   };
 
   render() {
     const { questions, language, languages } = this.props;
-    const { current, finish } = this.state;
+    const { current, finish, isLoading } = this.state;
 
     const hasNext = !!questions[current + 1];
     const hasPrevious = !!questions[current - 1];
@@ -152,6 +171,7 @@ export default class Quiz extends Component {
             }}
             showPrevious={hasPrevious && !finish}
             previous={() => this.previous()}
+            isLoading={isLoading}
           />
         )}
       </main>
