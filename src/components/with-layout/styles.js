@@ -2,6 +2,7 @@ import css from 'styled-jsx/css';
 
 export default css`
   :global(body) {
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     margin: 0;
@@ -12,6 +13,10 @@ export default css`
   :global(*::before),
   :global(*::after) {
     box-sizing: border-box;
+  }
+
+  :global(:focus:not(:focus-visible)) {
+    outline: none;
   }
 
   @font-face {
