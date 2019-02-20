@@ -7,10 +7,8 @@ const mysql = require('serverless-mysql')({
   }
 });
 
-exports.handler = async (event, context, callback) => {
-  mysql
-    .query(
-      `
+exports.handler = async (event, context) => {
+  const query = `
     SELECT
       questionId,
       AVG(answer1) AS answer1,
@@ -18,17 +16,21 @@ exports.handler = async (event, context, callback) => {
       AVG(answer3) AS answer3
     FROM answers
     GROUP BY questionId;
-  `
-    )
-    .then(data => {
-      return callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(data)
-      });
-    })
-    .catch(err => {
-      return callback(err, {
-        statusCode: 500
-      });
-    });
+  `;
+
+  try {
+    const data = await mysql.query(query);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(data)
+    };
+  } catch (err) {
+    context.fail(err);
+
+    return {
+      statusCode: 500,
+      body: ''
+    };
+  }
 };
