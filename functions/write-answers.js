@@ -7,11 +7,7 @@ const mysql = require('serverless-mysql')({
   }
 });
 
-exports.handler = async (event, context, callback) => {
-  if (!event.httpMethod === 'POST') {
-    callback(new Error('Invalid request type'));
-  }
-
+exports.handler = async (event, context) => {
   const { questionId, answers } = JSON.parse(event.body);
   const query = `
     INSERT INTO answers (
@@ -27,17 +23,19 @@ exports.handler = async (event, context, callback) => {
     );
   `;
 
-  mysql
-    .query(query)
-    .then(() => {
-      return callback(null, {
-        statusCode: 204,
-        body: ''
-      });
-    })
-    .catch(err => {
-      return callback(err, {
-        statusCode: 500
-      });
-    });
+  try {
+    await mysql.query(query);
+
+    return {
+      statusCode: 204,
+      body: ''
+    };
+  } catch (err) {
+    context.fail(err);
+
+    return {
+      statusCode: 500,
+      body: ''
+    };
+  }
 };
