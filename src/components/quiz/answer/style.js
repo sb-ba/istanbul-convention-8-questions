@@ -5,7 +5,7 @@ import { colors, fonts } from '../../../tokens';
 export default css`
   .answer {
     color: white;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     position: relative;
   }
 
@@ -32,7 +32,7 @@ export default css`
     display: flex;
     flex-direction: row;
     font-family: ${fonts.openSans.family};
-    font-size: 1rem;
+    font-size: 1.06rem;
     font-weight: ${fonts.openSans.weight.semibold};
     line-height: 1.3;
     margin-bottom: 0;
@@ -43,7 +43,7 @@ export default css`
 
   .index {
     font-family: ${fonts.bitter.family};
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 1;
     margin-right: 1.5rem;
   }

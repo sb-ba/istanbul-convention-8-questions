@@ -1,9 +1,11 @@
 import React from 'react';
 
+import ChevronLeftIcon from '../../../../static/icons/chevron-left.svg';
+import ChevronRightIcon from '../../../../static/icons/chevron-right.svg';
 import Button from './button';
 import Spinner from './spinner';
 
-import styles from './styles';
+import styles, { iconStyles, iconStylesPrevious } from './styles';
 
 export default ({
   showPrevious,
@@ -15,6 +17,8 @@ export default ({
 }) => (
   <nav>
     <style jsx>{styles}</style>
+    {iconStyles.styles}
+    {iconStylesPrevious.styles}
 
     <Button
       onClick={event => {
@@ -23,6 +27,9 @@ export default ({
       }}
       disabled={!showPrevious || isLoading === 'previous'}
     >
+      <ChevronLeftIcon
+        className={`${iconStyles.className} ${iconStylesPrevious.className}`}
+      />
       {isLoading === 'previous' ? <Spinner /> : <>{previousLabel}</>}
     </Button>
 
@@ -34,6 +41,7 @@ export default ({
       disabled={isLoading === 'next'}
     >
       {isLoading === 'next' ? <Spinner /> : <>{nextLabel}</>}
+      <ChevronRightIcon className={iconStyles.className} />
     </Button>
   </nav>
 );

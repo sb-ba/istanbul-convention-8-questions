@@ -18,7 +18,7 @@ export default css`
 
   .title {
     font-family: ${fonts.bitter.family};
-    font-size: 2rem;
+    font-size: 2.25rem;
     margin-bottom: 1rem;
     margin-top: 0;
   }

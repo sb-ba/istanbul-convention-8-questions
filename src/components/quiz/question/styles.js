@@ -12,14 +12,13 @@ export default css`
   }
 
   .title-container {
-    align-items: center;
     display: flex;
     flex-direction: row;
   }
 
   .title {
     font-family: ${fonts.openSans.family};
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     line-height: 1.2;
   }
 

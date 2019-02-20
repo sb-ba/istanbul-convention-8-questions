@@ -1,4 +1,6 @@
 import css from 'styled-jsx/css';
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 
 export default css`
   nav {
@@ -11,5 +13,22 @@ export default css`
     position: fixed;
     width: 100%;
     z-index: 10;
+  }
+`;
+
+export const iconStyles = css.resolve`
+  svg {
+    height: 0.9rem;
+    margin-left: 1rem;
+    transform: translateY(-0.05rem);
+    vertical-align: middle;
+    width: 0.9rem;
+  }
+`;
+
+export const iconStylesPrevious = css.resolve`
+  svg {
+    margin-left: 0;
+    margin-right: 1rem;
   }
 `;
