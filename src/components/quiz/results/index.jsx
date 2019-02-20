@@ -53,12 +53,14 @@ export default ({ questions }) => {
                 ))}
               </ul>
 
+              {/* eslint-disable react/no-danger */}
               {text && (
                 <div
                   className="convention-text"
                   dangerouslySetInnerHTML={{ __html: text }}
                 />
               )}
+              {/* eslint-enable react/no-danger */}
             </li>
           )
         )}

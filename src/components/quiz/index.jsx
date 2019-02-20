@@ -1,6 +1,7 @@
 import Helmet from 'react-helmet';
 import React, { Component } from 'react';
 
+import Explainer from './explainer';
 import Footer from './footer';
 import Intro from './intro';
 import Header from '../header';
@@ -9,6 +10,16 @@ import Results from './results';
 import Question from './question';
 
 import styles from './styles';
+
+const translate = (key, translations) => {
+  const {
+    node: { frontmatter }
+  } = translations.find(
+    ({ node: { frontmatter: nodeFrontmatter } }) => !!nodeFrontmatter[key]
+  );
+
+  return frontmatter[key];
+};
 
 const persistAnswers = (questionId, data) => {
   const payload = {
@@ -29,7 +40,7 @@ const persistAnswers = (questionId, data) => {
 export default class Quiz extends Component {
   state = {
     answers: null,
-    current: -1,
+    current: -2,
     finish: false,
     isLoading: false
   };
@@ -44,7 +55,7 @@ export default class Quiz extends Component {
   hideIntro = () => {
     this.setState(state => ({
       ...state,
-      current: 0
+      current: -1
     }));
   };
 
@@ -70,14 +81,24 @@ export default class Quiz extends Component {
   next = () => {
     const { questions } = this.props;
     const { answers, current } = this.state;
-    const { id: questionId } = questions[current].node.frontmatter;
+    const { id: questionId } =
+      current >= 0 && questions[current].node.frontmatter;
+
+    if (!questionId) {
+      this.setState(state => ({
+        ...state,
+        current: state.current + 1
+      }));
+
+      return Promise.resolve();
+    }
 
     this.setState(state => ({
       ...state,
       isLoading: 'next'
     }));
 
-    persistAnswers(questionId, answers).then(() => {
+    return persistAnswers(questionId, answers).then(() => {
       this.setState(state => ({
         ...state,
         current: state.current + 1,
@@ -87,14 +108,22 @@ export default class Quiz extends Component {
   };
 
   render() {
-    const { questions, language, languages } = this.props;
+    const {
+      questions,
+      language,
+      languages,
+      translations,
+      explainer
+    } = this.props;
     const { current, finish, isLoading } = this.state;
 
     const hasNext = !!questions[current + 1];
     const hasPrevious = !!questions[current - 1];
     const title = finish
-      ? 'Results'
-      : `Question ${current + 1}/${questions.length}`;
+      ? translate('resultsTitle', translations)
+      : `${translate('questionsTitle', translations)} ${current + 1}/${
+          questions.length
+        }`;
 
     return (
       <main>
@@ -103,21 +132,23 @@ export default class Quiz extends Component {
         {current >= 0 ? (
           <Helmet title={title} />
         ) : (
-          <Helmet title="8 Questions for the 8th of March" />
+          <Helmet title={translate('introTitle', translations)} />
         )}
 
         <Header
           items={[['/', 'Home']]}
           language={language}
           languages={languages}
-          title={current >= 0 && title}
+          title={
+            current >= 0 ? title : translate('councilOfEurope', translations)
+          }
           onClickLogo={event => {
             event.preventDefault();
 
             // reset quiz
             this.setState({
               answers: null,
-              current: -1,
+              current: -2,
               finish: false
             });
           }}
@@ -130,14 +161,19 @@ export default class Quiz extends Component {
           />
         )}
 
-        {current === -1 && (
+        {current === -2 && (
           <Intro
+            title={translate('introTitle', translations)}
+            intro={translate('introIntro', translations)}
+            buttonLabel={translate('introButtonLabel', translations)}
             onStart={event => {
               event.preventDefault();
               this.hideIntro();
             }}
           />
         )}
+
+        {current === -1 && <Explainer {...explainer[0].node} />}
 
         {!finish && current >= 0 && (
           <div className="question-container" key={`question-${current}`}>
@@ -160,7 +196,7 @@ export default class Quiz extends Component {
           </div>
         )}
 
-        {!finish && current >= 0 && (
+        {!finish && current >= -1 && (
           <Footer
             next={() => {
               if (hasNext) {
@@ -169,8 +205,10 @@ export default class Quiz extends Component {
                 this.finish();
               }
             }}
+            nextLabel={translate('next', translations)}
             showPrevious={hasPrevious && !finish}
             previous={() => this.previous()}
+            previousLabel={translate('previous', translations)}
             isLoading={isLoading}
           />
         )}

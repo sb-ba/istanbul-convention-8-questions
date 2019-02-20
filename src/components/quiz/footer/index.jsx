@@ -5,7 +5,14 @@ import Spinner from './spinner';
 
 import styles from './styles';
 
-export default ({ showPrevious, previous, next, isLoading = false }) => (
+export default ({
+  showPrevious,
+  previous,
+  next,
+  nextLabel,
+  previousLabel,
+  isLoading = false
+}) => (
   <nav>
     <style jsx>{styles}</style>
 
@@ -16,7 +23,7 @@ export default ({ showPrevious, previous, next, isLoading = false }) => (
       }}
       disabled={!showPrevious || isLoading === 'previous'}
     >
-      {isLoading === 'previous' ? <Spinner /> : <>Previous</>}
+      {isLoading === 'previous' ? <Spinner /> : <>{previousLabel}</>}
     </Button>
 
     <Button
@@ -26,7 +33,7 @@ export default ({ showPrevious, previous, next, isLoading = false }) => (
       }}
       disabled={isLoading === 'next'}
     >
-      {isLoading === 'next' ? <Spinner /> : <>Next</>}
+      {isLoading === 'next' ? <Spinner /> : <>{nextLabel}</>}
     </Button>
   </nav>
 );

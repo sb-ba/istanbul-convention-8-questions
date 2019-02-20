@@ -8,9 +8,60 @@ const createLocalizedQuiz = (graphql, createPage) => {
   const createQuiz = (language, languages) =>
     graphql(`
     query {
+      translations: allMarkdownRemark(
+        filter: {
+          fields: {
+            folderGroup: { eq: "translations" }
+            folder: { eq: "${language}" }
+          }
+        }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              next
+              previous
+              introTitle
+              introIntro
+              introButtonLabel
+
+              questionsTitle
+
+              resultsTitle
+
+              councilOfEurope
+            }
+          }
+        }
+      }
+
+      explainer: allMarkdownRemark(
+        filter: {
+          fields: {
+            folderGroup: { eq: "explainer" }
+            folder: { eq: "${language}" }
+          }
+        }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              points {
+                title
+              }
+            }
+            html
+          }
+        }
+      }
+
       questions: allMarkdownRemark(
         filter: {
-          fields: { folder: { eq: "${language}" } }
+          fields: {
+            folderGroup: { eq: "questions" }
+            folder: { eq: "${language}" }
+          }
         }
       ) {
         edges {
@@ -25,19 +76,29 @@ const createLocalizedQuiz = (graphql, createPage) => {
         }
       }
     }
-  `).then(({ data: { questions: { edges } } }) => {
-      const url = language === 'en' ? '/' : `/${language}/`;
-
-      return createPage({
-        path: url,
-        component: path.resolve('src/templates/quiz/index.jsx'),
-        context: {
-          questions: edges,
-          language,
-          languages
+  `).then(
+      ({
+        data: {
+          translations: { edges: translations },
+          questions: { edges: questions },
+          explainer: { edges: explainer }
         }
-      });
-    });
+      }) => {
+        const url = language === 'en' ? '/' : `/${language}/`;
+
+        return createPage({
+          path: url,
+          component: path.resolve('src/templates/quiz/index.jsx'),
+          context: {
+            questions,
+            language,
+            languages,
+            translations,
+            explainer
+          }
+        });
+      }
+    );
 
   const languages = getDirectories('./data/questions');
 
@@ -51,6 +112,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
   if (node.internal.type === 'MarkdownRemark') {
     const absPath = node.fileAbsolutePath.split('/');
+    const folderGroup = absPath[absPath.length - 3];
     const folder = absPath[absPath.length - 2];
     const fileName = absPath[absPath.length - 1];
 
@@ -64,6 +126,12 @@ exports.onCreateNode = ({ node, actions }) => {
       node,
       name: 'folder',
       value: folder
+    });
+
+    createNodeField({
+      node,
+      name: 'folderGroup',
+      value: folderGroup
     });
   }
 };

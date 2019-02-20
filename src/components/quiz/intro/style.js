@@ -5,6 +5,7 @@ import { colors, fonts } from '../../../tokens';
 export default css`
   article {
     background-color: ${colors.red};
+    border: 5px solid white;
     color: white;
     display: flex;
     flex-direction: column;

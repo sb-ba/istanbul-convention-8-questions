@@ -17,6 +17,22 @@ module.exports = {
     },
 
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'translations',
+        path: `${__dirname}/data/translations`
+      }
+    },
+
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'explainer',
+        path: `${__dirname}/data/explainer`
+      }
+    },
+
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
