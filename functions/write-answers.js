@@ -13,10 +13,7 @@ exports.handler = async (event, context, callback) => {
   }
 
   const { questionId, answers } = JSON.parse(event.body);
-
-  mysql
-    .query(
-      `
+  const query = `
     INSERT INTO answers (
       questionId,
       answer1,
@@ -24,12 +21,16 @@ exports.handler = async (event, context, callback) => {
       answer3
     ) VALUES (
       '${questionId}',
-      '${answers[0]}',
-      '${answers[1]}',
-      '${answers[2]}'
+      ${answers[0]},
+      ${answers[1]},
+      ${answers[2]}
     );
-  `
-    )
+  `;
+
+  console.log(process.env, query);
+
+  mysql
+    .query(query)
     .then(data => {
       return callback(null, {
         statusCode: 200,
