@@ -142,6 +142,7 @@ export default class Quiz extends Component {
           title={
             current >= 0 ? title : translate('councilOfEurope', translations)
           }
+          titleIsCouncil={current < 0}
           onClickLogo={event => {
             event.preventDefault();
 

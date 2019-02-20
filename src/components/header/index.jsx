@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import Link from 'gatsby-link';
 import React from 'react';
 
@@ -5,7 +6,13 @@ import LanguageSwitch from './language-switch';
 
 import styles, { logoStyles, linkStyles } from './styles';
 
-export default ({ language, languages, title, onClickLogo = () => {} }) => (
+export default ({
+  language,
+  languages,
+  title,
+  titleIsCouncil = false,
+  onClickLogo = () => {}
+}) => (
   <header>
     <style jsx>{styles}</style>
     {linkStyles.styles}
@@ -17,7 +24,16 @@ export default ({ language, languages, title, onClickLogo = () => {} }) => (
       <br /> Europe
     </Link>
 
-    {title && <h1>{title}</h1>}
+    {title && (
+      <h1
+        className={classnames(
+          { title: !titleIsCouncil },
+          { 'title-council': titleIsCouncil }
+        )}
+      >
+        {title}
+      </h1>
+    )}
 
     <LanguageSwitch current={language} items={languages} />
   </header>

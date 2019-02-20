@@ -15,13 +15,23 @@ export default css`
     padding: 0.5rem 1rem;
   }
 
-  h1 {
-    font-size: 1rem;
-    font-family: ${fonts.bitter.family};
+  .title,
+  .title-council {
     line-height: 1;
     margin-bottom: 0;
     margin-top: 0;
     padding-bottom: 0.2rem;
+  }
+
+  .title {
+    font-size: 1rem;
+    font-family: ${fonts.bitter.family};
+  }
+
+  .title-council {
+    font-family: ${fonts.openSans.family};
+    font-size: 0.75rem;
+    text-transform: uppercase;
   }
 `;
 
