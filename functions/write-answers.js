@@ -19,10 +19,14 @@ exports.handler = async (event, context, callback) => {
       `
     INSERT INTO answers (
       questionId,
-      answers
+      answer1,
+      answer2,
+      answer3
     ) VALUES (
       '${questionId}',
-      '${JSON.stringify(answers)}'
+      '${answers[0]}',
+      '${answers[1]}',
+      '${answers[2]}'
     );
   `
     )
