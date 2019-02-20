@@ -27,11 +27,11 @@ exports.handler = async (event, context, callback) => {
     );
   `;
 
-  console.log(process.env, query);
-
   mysql
     .query(query)
     .then(data => {
+      console.log('query done', data);
+
       return callback(null, {
         statusCode: 200,
         body: JSON.stringify(data)
