@@ -39,6 +39,7 @@ const persistAnswers = (questionId, data) => {
 
 export default class Quiz extends Component {
   state = {
+    userAnswers: {},
     answers: null,
     current: -2,
     finish: false,
@@ -115,7 +116,7 @@ export default class Quiz extends Component {
       translations,
       explainer
     } = this.props;
-    const { current, finish, isLoading } = this.state;
+    const { current, finish, isLoading, userAnswers } = this.state;
 
     const hasNext = !!questions[current + 1];
     const hasPrevious = !!questions[current - 1];
@@ -150,7 +151,8 @@ export default class Quiz extends Component {
             this.setState({
               answers: null,
               current: -2,
-              finish: false
+              finish: false,
+              userAnswers: {}
             });
           }}
         />
@@ -183,7 +185,11 @@ export default class Quiz extends Component {
               storeAnswer={answers => {
                 this.setState(state => ({
                   ...state,
-                  answers
+                  answers,
+                  userAnswers: {
+                    ...state.userAnswers,
+                    [questions[current].node.frontmatter.id]: answers
+                  }
                 }));
               }}
               {...questions[current].node}
@@ -194,6 +200,7 @@ export default class Quiz extends Component {
         {finish && (
           <div className="result-container">
             <Results
+              userAnswers={userAnswers}
               questions={questions}
               title={translate('resultsThankYou', translations)}
               action={translate('resultsAction', translations)}

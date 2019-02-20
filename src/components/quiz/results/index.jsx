@@ -15,7 +15,7 @@ const findAnswerResult = (questionId, answerIndex, answers) => {
   return question && question[`answer${answerIndex}`];
 };
 
-export default ({ questions, title, action, compare }) => {
+export default ({ userAnswers, questions, title, action, compare }) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
 
@@ -64,7 +64,7 @@ export default ({ questions, title, action, compare }) => {
                       <>
                         <Result
                           index={index}
-                          value={findAnswerResult(id, index + 1, data)}
+                          value={userAnswers[id][index]}
                           label="You"
                         />
                         <Result
