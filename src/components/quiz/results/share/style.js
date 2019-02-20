@@ -8,8 +8,6 @@ export default css`
   section {
     background-color: ${colors.green};
     color: white;
-    margin-bottom: 2.5rem;
-    margin-top: 2.5rem;
     padding: 1rem;
     text-align: center;
   }

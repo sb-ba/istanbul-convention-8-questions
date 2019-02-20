@@ -6,7 +6,7 @@ import { colors, fonts } from '../../../tokens';
 
 export default css`
   .results-container {
-    margin: 1.5rem 1rem 0 1rem;
+    margin: 1.5rem 0.5rem 0 0.5rem;
   }
 
   header {
@@ -22,27 +22,21 @@ export default css`
 
   .answers-title,
   .title {
-    font-size: 1rem;
-    font-weight: ${fonts.openSans.weight.bold};
+    color: ${colors.red};
+    font-family: ${fonts.bitter.family};
+    font-size: 1.75rem;
+    font-weight: ${fonts.bitter.weight.bold};
     margin-bottom: 0;
     margin-top: 0;
-    text-transform: uppercase;
   }
 
   .answers-title {
-    color: ${colors.red};
-    font-family: ${fonts.openSans.family};
+    margin-top: 2.5rem;
     text-align: center;
   }
 
-  .intro {
-    font-size: 0.8rem;
-    margin: 0;
-  }
-
   .question-title {
-    background-color: ${colors.darkGrey};
-    color: white;
+    color: black;
     font-family: ${fonts.openSans.family};
     font-size: 1.1rem;
     line-height: 1.4;
@@ -58,13 +52,13 @@ export default css`
   }
 
   .convention-text {
-    background-color: ${colors.lightGrey};
+    background-color: ${colors.brand};
+    color: white;
     font-family: ${fonts.openSans.family};
     font-size: 1rem;
     font-weight: ${fonts.openSans.weight.semiBold};
-    margin-left: -1rem;
-    margin-right: -1rem;
     line-height: 1.4;
+    margin-top: 2rem;
     padding: 1.5rem;
   }
 

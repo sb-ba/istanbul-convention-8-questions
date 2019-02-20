@@ -28,6 +28,10 @@ const createLocalizedQuiz = (graphql, createPage) => {
               questionsTitle
 
               resultsTitle
+              resultsThankYou
+              resultsCompare
+              resultsShare
+              resultsAction
 
               councilOfEurope
             }

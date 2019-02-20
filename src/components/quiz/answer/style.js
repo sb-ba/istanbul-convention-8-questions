@@ -49,7 +49,6 @@ export default css`
   }
 
   .progress {
-    background-color: red;
     left: 0;
     position: absolute;
     top: 0;
@@ -58,10 +57,10 @@ export default css`
 
   .answer--index-a .progress,
   .answer--index-c .progress {
-    background-image: linear-gradient(to right, #123751, #0e2b3f);
+    background-image: linear-gradient(to right, transparent, #125d80);
   }
 
   .answer--index-b .progress {
-    background-image: linear-gradient(to right, #00838f, #01737e);
+    background-image: linear-gradient(to right, transparent, #01646d);
   }
 `;

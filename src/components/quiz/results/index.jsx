@@ -2,11 +2,20 @@ import React, { useState, useEffect } from 'react';
 
 import Answer from '../answer';
 import CheckIcon from '../../../../static/icons/check-square.svg';
+import Result from './result';
 import Share from './share';
 
 import style, { checkIconStyle } from './style';
 
-export default ({ questions }) => {
+const findAnswerResult = (questionId, answerIndex, answers) => {
+  const question = answers.find(
+    ({ questionId: answerQuestionId }) => answerQuestionId === questionId
+  );
+
+  return question && question[`answer${answerIndex}`];
+};
+
+export default ({ questions, title, action, compare }) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
 
@@ -25,31 +34,47 @@ export default ({ questions }) => {
         <CheckIcon className={checkIconStyle.className} />
 
         <div className="intro-content">
-          <h2 className="title">Thank you :)</h2>
-          <p className="intro">See yours and the average results</p>
+          <h2 className="title">{title}</h2>
         </div>
       </header>
 
       <Share />
 
-      <h2 className="answers-title">See yours and the average results</h2>
+      <h2 className="answers-title">{compare}</h2>
 
       <ul>
         {questions.map(
           ({
             node: {
-              frontmatter: { id, title, answers },
+              frontmatter: { id, title: questionTitle, answers },
               html: text
             }
           }) => (
             <li key={`question-result-${id}`}>
-              <h2 className="question-title">{title}</h2>
+              <h2 className="question-title">{questionTitle}</h2>
 
               <ul>
                 {answers.map((answer, index) => (
-                  <Answer key={answer} index={index} theme="transparent">
-                    {answer}
-                  </Answer>
+                  <>
+                    <Answer key={answer} index={index} theme="transparent">
+                      {answer}
+                    </Answer>
+
+                    {data && (
+                      <>
+                        <Result
+                          index={index}
+                          value={findAnswerResult(id, index + 1, data)}
+                          label="You"
+                        />
+                        <Result
+                          index={index}
+                          value={findAnswerResult(id, index + 1, data)}
+                          label="Average"
+                        />
+                      </>
+                    )}
+                  </>
                 ))}
               </ul>
 
@@ -65,6 +90,8 @@ export default ({ questions }) => {
           )
         )}
       </ul>
+
+      <h2 className="answers-title">{action}</h2>
 
       <Share />
     </div>

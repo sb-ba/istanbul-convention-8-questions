@@ -193,7 +193,13 @@ export default class Quiz extends Component {
 
         {finish && (
           <div className="result-container">
-            <Results questions={questions} />
+            <Results
+              questions={questions}
+              title={translate('resultsThankYou', translations)}
+              action={translate('resultsAction', translations)}
+              share={translate('resultsShare', translations)}
+              compare={translate('resultsCompare', translations)}
+            />
           </div>
         )}
 
