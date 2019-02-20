@@ -2,11 +2,9 @@
 export const colors = {
   answer1: '#1B7EAC',
   answer2: '#00838F',
-
   brand: 'rgb(18, 55, 81)',
-  brandMatt: 'rgb(160, 175, 184)',
   darkGrey: '#4A4A4A',
-  lightGrey: '#D1CFCF',
+  lightGrey: '#E5E4E4',
   green: '#118566',
   red: '#D4310D'
 };

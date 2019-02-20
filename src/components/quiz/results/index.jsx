@@ -15,7 +15,14 @@ const findAnswerResult = (questionId, answerIndex, answers) => {
   return question && question[`answer${answerIndex}`];
 };
 
-export default ({ userAnswers, questions, title, action, compare }) => {
+export default ({
+  userAnswers,
+  questions,
+  title,
+  action,
+  compare,
+  explainer
+}) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
 
@@ -44,14 +51,20 @@ export default ({ userAnswers, questions, title, action, compare }) => {
 
       <ul>
         {questions.map(
-          ({
-            node: {
-              frontmatter: { id, title: questionTitle, answers },
-              html: text
-            }
-          }) => (
+          (
+            {
+              node: {
+                frontmatter: { id, title: questionTitle, answers },
+                html: text
+              }
+            },
+            questionIndex
+          ) => (
             <li key={`question-result-${id}`}>
-              <h2 className="question-title">{questionTitle}</h2>
+              <h2 className="question-title">
+                <div className="question-index">{questionIndex + 1}</div>
+                <span className="question-title-inner">{questionTitle}</span>
+              </h2>
 
               <ul>
                 {answers.map((answer, index) => (
@@ -61,7 +74,7 @@ export default ({ userAnswers, questions, title, action, compare }) => {
                     </Answer>
 
                     {data && (
-                      <>
+                      <div className="results-data-container">
                         <Result
                           index={index}
                           value={userAnswers[id][index]}
@@ -72,7 +85,7 @@ export default ({ userAnswers, questions, title, action, compare }) => {
                           value={findAnswerResult(id, index + 1, data)}
                           label="Average"
                         />
-                      </>
+                      </div>
                     )}
                   </>
                 ))}
@@ -94,6 +107,11 @@ export default ({ userAnswers, questions, title, action, compare }) => {
       <h2 className="answers-title">{action}</h2>
 
       <Share />
+
+      <article
+        className="explainer"
+        dangerouslySetInnerHTML={{ __html: explainer.node.html }}
+      />
     </div>
   );
 };

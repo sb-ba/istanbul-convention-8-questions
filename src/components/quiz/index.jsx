@@ -114,7 +114,8 @@ export default class Quiz extends Component {
       language,
       languages,
       translations,
-      explainer
+      explainer,
+      explainerResults
     } = this.props;
     const { current, finish, isLoading, userAnswers } = this.state;
 
@@ -206,6 +207,7 @@ export default class Quiz extends Component {
               action={translate('resultsAction', translations)}
               share={translate('resultsShare', translations)}
               compare={translate('resultsCompare', translations)}
+              explainer={explainerResults[0]}
             />
           </div>
         )}

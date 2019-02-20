@@ -60,6 +60,21 @@ const createLocalizedQuiz = (graphql, createPage) => {
         }
       }
 
+      explainerResults: allMarkdownRemark(
+        filter: {
+          fields: {
+            folderGroup: { eq: "explainer-results" }
+            folder: { eq: "${language}" }
+          }
+        }
+      ) {
+        edges {
+          node {
+            html
+          }
+        }
+      }
+
       questions: allMarkdownRemark(
         filter: {
           fields: {
@@ -85,7 +100,8 @@ const createLocalizedQuiz = (graphql, createPage) => {
         data: {
           translations: { edges: translations },
           questions: { edges: questions },
-          explainer: { edges: explainer }
+          explainer: { edges: explainer },
+          explainerResults: { edges: explainerResults }
         }
       }) => {
         const url = language === 'en' ? '/' : `/${language}/`;
@@ -98,7 +114,8 @@ const createLocalizedQuiz = (graphql, createPage) => {
             language,
             languages,
             translations,
-            explainer
+            explainer,
+            explainerResults
           }
         });
       }

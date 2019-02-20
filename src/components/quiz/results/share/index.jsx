@@ -11,7 +11,7 @@ export default () => (
     <style jsx>{style}</style>
     {shareIconStyle.styles}
 
-    <h3 className="title">Share the quiz</h3>
+    <h3 className="title">Share</h3>
 
     <FacebookIcon className={shareIconStyle.className} />
     <TwitterIcon className={shareIconStyle.className} />

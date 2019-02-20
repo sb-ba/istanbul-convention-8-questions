@@ -33,6 +33,14 @@ module.exports = {
     },
 
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'explainer',
+        path: `${__dirname}/data/explainer-results`
+      }
+    },
+
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {

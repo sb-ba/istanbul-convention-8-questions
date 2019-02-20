@@ -6,7 +6,6 @@ import { colors, fonts } from '../../../tokens';
 
 export default css`
   .language-switch {
-    color: ${colors.brandMatt};
     font-family: ${fonts.openSans.family};
     font-size: 0.9rem;
     font-weight: ${fonts.openSans.weight.semibold};

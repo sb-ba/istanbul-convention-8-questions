@@ -10,13 +10,13 @@ export default css`
   }
 
   header {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     color: ${colors.red};
     flex-direction: row;
     font-family: ${fonts.openSans.family};
     justify-content: center;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     padding-top: 2rem;
   }
 
@@ -31,18 +31,42 @@ export default css`
   }
 
   .answers-title {
+    margin-bottom: 2rem;
     margin-top: 2.5rem;
     text-align: center;
   }
 
   .question-title {
     color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     font-family: ${fonts.openSans.family};
     font-size: 1.1rem;
     line-height: 1.4;
     margin-left: -1rem;
     margin-right: -1rem;
     padding: 1.5rem 1rem;
+  }
+
+  .question-title-inner {
+    flex: 1;
+  }
+
+  .question-index {
+    align-content: center;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    flex: 0 1 auto;
+    font-family: ${fonts.bitter.family};
+    font-size: 1.875rem;
+    height: 2.5rem;
+    justify-content: center;
+    line-height: 2.25rem;
+    margin-right: 0.75rem;
+    width: 2.5rem;
   }
 
   ul {
@@ -58,8 +82,32 @@ export default css`
     font-size: 1rem;
     font-weight: ${fonts.openSans.weight.semiBold};
     line-height: 1.4;
+    margin-bottom: 5rem;
     margin-top: 2rem;
     padding: 1.5rem;
+  }
+
+  .results-data-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .explainer {
+    background-color: ${colors.lightGrey};
+    font-family: ${fonts.openSans.family};
+    font-size: 1rem;
+    font-weight: ${fonts.openSans.weight.semiBold};
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+  }
+
+  :global(.explainer strong) {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  :global(.explainer a) {
+    color: currentColor;
   }
 
   :global(.convention-text > *:first-child) {
