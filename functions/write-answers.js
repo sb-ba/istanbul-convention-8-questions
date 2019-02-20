@@ -7,7 +7,7 @@ const mysql = require('serverless-mysql')({
   }
 });
 
-exports.handler = async (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   if (!event.httpMethod === 'POST') {
     callback(new Error('Invalid request type'));
   }
