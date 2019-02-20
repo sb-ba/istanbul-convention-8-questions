@@ -26,10 +26,10 @@ exports.handler = async (event, context, callback) => {
     );
   `
     )
-    .then(() => {
+    .then(data => {
       return callback(null, {
-        statusCode: 204,
-        body: ''
+        statusCode: 200,
+        body: JSON.stringify(data)
       });
     })
     .catch(err => {
