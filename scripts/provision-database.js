@@ -11,7 +11,9 @@ client.query(`
   CREATE TABLE IF NOT EXISTS answers (
     id INT unsigned NOT NULL AUTO_INCREMENT,
     questionId INT NOT NULL,
-    answers JSON NOT NULL,
+    answer1 INT NOT NULL,
+    answer2 INT NOT NULL,
+    answer3 INT NOT NULL,
     PRIMARY KEY(\`id\`)
   );
 `);
