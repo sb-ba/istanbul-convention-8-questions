@@ -1,4 +1,5 @@
-// eslint-disable-next-line import/prefer-default-export
+const SCREEN_SIZES = [['phone', 500], ['desktop', 1024]];
+
 export const colors = {
   answer1: '#123751',
   answer2: '#00838F',
@@ -26,3 +27,8 @@ export const fonts = {
     }
   }
 };
+
+export const mq = SCREEN_SIZES.reduce((acc, [name, size]) => {
+  acc[name] = `only screen and (min-width: ${size}px)`;
+  return acc;
+}, {});

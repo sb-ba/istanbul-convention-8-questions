@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-import { colors, fonts } from '../../../../tokens';
+import { colors, fonts, mq } from '../../../../tokens';
 
 export default css`
   button {
@@ -14,6 +14,24 @@ export default css`
     padding-top: 0.75rem;
     text-transform: uppercase;
     width: 50%;
+  }
+
+  @media ${mq.desktop} {
+    button {
+      border-radius: 50%;
+      height: 12rem;
+      left: -7rem;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12rem;
+      z-index: 10;
+    }
+
+    button + button {
+      left: auto;
+      right: -7rem;
+    }
   }
 
   button + button {

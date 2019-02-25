@@ -12,16 +12,22 @@ export default Wrapped => props => {
   } = props;
 
   return (
-    <>
+    <div className="app">
       <style jsx>{styles}</style>
-      <Wrapped {...props} />
-      <Footer
-        contact={translate('footerContact', translations)}
-        privacy={translate('footerPrivacy', translations)}
-        istanbulConvention={translate('footerIstanbulConvention', translations)}
-        councilOfEurope={translate('councilOfEurope', translations)}
-        followUs={translate('footerFollowUs', translations)}
-      />
-    </>
+
+      <div className="app__constraint">
+        <Wrapped {...props} />
+        <Footer
+          contact={translate('footerContact', translations)}
+          privacy={translate('footerPrivacy', translations)}
+          istanbulConvention={translate(
+            'footerIstanbulConvention',
+            translations
+          )}
+          councilOfEurope={translate('councilOfEurope', translations)}
+          followUs={translate('footerFollowUs', translations)}
+        />
+      </div>
+    </div>
   );
 };

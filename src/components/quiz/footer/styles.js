@@ -2,6 +2,8 @@ import css from 'styled-jsx/css';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
+import { mq } from '../../../tokens';
+
 export default css`
   nav {
     align-items: center;
@@ -13,6 +15,12 @@ export default css`
     position: fixed;
     width: 100%;
     z-index: 10;
+  }
+
+  @media ${mq.desktop} {
+    nav {
+      position: static;
+    }
   }
 `;
 

@@ -1,10 +1,13 @@
 import css from 'styled-jsx/css';
 
+import { colors, mq } from '../../tokens';
+
 export default css`
   :global(body) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    background-color: ${colors.lightGrey};
     margin: 0;
     padding: 0;
   }
@@ -49,5 +52,17 @@ export default css`
     font-weight: 800;
     src: url('/fonts/open-sans/open-sans-extrabold.woff2') format('woff2'),
       url('/fonts/open-sans/open-sans-extrabold.woff') format('woff');
+  }
+
+  @media ${mq.desktop} {
+    .app {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app__constraint {
+      width: 60rem;
+    }
   }
 `;
