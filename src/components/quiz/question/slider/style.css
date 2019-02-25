@@ -11,6 +11,7 @@
   width: 100%;
 }
 
+.slider-last-track::after,
 .rc-slider-rail::before,
 .rc-slider-rail::after,
 .rc-slider-track::before {
@@ -27,9 +28,14 @@
   left: 1.5rem;
 }
 
+.slider-last-track::after,
 .rc-slider-rail::after {
   content: 'C';
   right: 1.5rem;
+}
+
+.rc-slider-track {
+  z-index: 10;
 }
 
 .rc-slider-track::before {
@@ -49,8 +55,9 @@
   position: absolute;
   top: -0.65rem;
   touch-action: pan-x;
-  transform: translateX(-0.25rem);
+  transform: translateX(-0.2rem);
   width: 0.5rem;
+  z-index: 20;
 }
 
 .rc-slider-handle::before,
@@ -63,6 +70,7 @@
   top: 50%;
   transform: translateY(-50%);
   transition: opacity 400ms ease;
+  z-index: 30;
 }
 
 .rc-slider-handle::before {
