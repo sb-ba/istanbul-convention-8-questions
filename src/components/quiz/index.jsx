@@ -1,6 +1,8 @@
 import Helmet from 'react-helmet';
 import React, { Component } from 'react';
 
+import translate from '../../lib/translate';
+
 import Explainer from './explainer';
 import Footer from './footer';
 import Intro from './intro';
@@ -10,16 +12,6 @@ import Results from './results';
 import Question from './question';
 
 import styles from './styles';
-
-const translate = (key, translations) => {
-  const {
-    node: { frontmatter }
-  } = translations.find(
-    ({ node: { frontmatter: nodeFrontmatter } }) => !!nodeFrontmatter[key]
-  );
-
-  return frontmatter[key];
-};
 
 const persistAnswers = (questionId, data) => {
   const payload = {

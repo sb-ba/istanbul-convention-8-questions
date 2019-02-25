@@ -15,4 +15,7 @@ resultsShare: Share
 resultsAction: Now you know a bit more about the Istanbul Convention – what can you do?
 
 councilOfEurope: Council of Europe
+
+footerContact: Contact
+footerPrivacy: Privacy
 ---
