@@ -13,8 +13,18 @@ export default css`
     text-align: center;
   }
 
+  strong {
+    font-weight: ${fonts.openSans.weight.extraBold};
+  }
+
+  p {
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
   .share {
     margin-bottom: 5rem;
+    margin-top: 5rem;
   }
 
   .share-title {

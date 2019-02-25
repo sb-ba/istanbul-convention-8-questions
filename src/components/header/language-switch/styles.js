@@ -23,10 +23,7 @@ export default css`
     padding: 0;
     position: absolute;
     top: 100%;
-  }
-
-  li + li {
-    margin-left: 0.5rem;
+    width: 100%;
   }
 
   button {
@@ -37,7 +34,7 @@ export default css`
     font-size: inherit;
     font-family: inherit;
     margin: 0;
-    padding: 0 1.15rem 0 0;
+    padding: 0 1.15rem 0 1rem;
     position: relative;
     text-transform: uppercase;
   }
@@ -67,7 +64,7 @@ export const linkStyle = css.resolve`
     border-top: 1px solid currentColor;
     color: currentColor;
     display: block;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     text-transform: uppercase;
   }

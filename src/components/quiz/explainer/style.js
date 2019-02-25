@@ -5,6 +5,7 @@ import { fonts } from '../../../tokens';
 export default css`
   article {
     font-family: ${fonts.openSans.family};
+    min-height: 90vh;
     padding: 1.5rem;
   }
 

@@ -21,15 +21,19 @@ export default css`
     text-align: center;
     text-transform: uppercase;
   }
+
+  .share-link {
+    color: currentColor;
+  }
+
+  .share-link + .share-link {
+    margin-left: 1.25rem;
+  }
 `;
 
 export const shareIconStyle = css.resolve`
   svg {
     height: 2.25rem;
     width: 2.25rem;
-  }
-
-  svg + svg {
-    margin-left: 1.25rem;
   }
 `;

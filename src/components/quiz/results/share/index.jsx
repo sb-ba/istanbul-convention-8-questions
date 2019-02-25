@@ -13,8 +13,19 @@ export default () => (
 
     <h3 className="title">Share</h3>
 
-    <FacebookIcon className={shareIconStyle.className} />
-    <TwitterIcon className={shareIconStyle.className} />
-    <EnvelopeIcon className={shareIconStyle.className} />
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u="
+      className="share-link"
+    >
+      <FacebookIcon className={shareIconStyle.className} />
+    </a>
+
+    <a href="https://twitter.com/intent/tweet" className="share-link">
+      <TwitterIcon className={shareIconStyle.className} />
+    </a>
+
+    <a href="mailto:" className="share-link">
+      <EnvelopeIcon className={shareIconStyle.className} />
+    </a>
   </section>
 );

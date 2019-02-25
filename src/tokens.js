@@ -23,7 +23,8 @@ export const fonts = {
     family: 'Open Sans, sans-serif',
     weight: {
       semibold: 600,
-      bold: 700
+      bold: 700,
+      extraBold: 800
     }
   }
 };
