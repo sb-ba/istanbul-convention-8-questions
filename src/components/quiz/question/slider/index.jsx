@@ -2,6 +2,8 @@ import React from 'react';
 import { Range } from 'rc-slider';
 
 import { colors } from '../../../../tokens';
+
+import style from './style';
 import './style.css';
 
 const summarizeArray = arr =>
@@ -11,8 +13,8 @@ const summarizeArray = arr =>
     return acc;
   }, 0);
 
-const updateResults = (data, callback) => {
-  const differences = [...data, 99].reduce((acc, total) => {
+const differences = data =>
+  [...data, 99].reduce((acc, total) => {
     const sum = acc.length === 0 ? 0 : summarizeArray(acc);
 
     acc.push(total - sum);
@@ -20,17 +22,41 @@ const updateResults = (data, callback) => {
     return acc;
   }, []);
 
-  callback(differences);
-};
+export default class Slider extends React.Component {
+  state = {
+    lastTrackValue: 33
+  };
 
-export default ({ onChange = () => {}, ...rest }) => (
-  <Range
-    pushable
-    trackStyle={[{ backgroundColor: colors.answer2 }]}
-    railStyle={{ backgroundColor: colors.answer1 }}
-    onChange={data => {
-      updateResults(data, onChange);
-    }}
-    {...rest}
-  />
-);
+  render() {
+    const { onChange = () => {}, ...rest } = this.props;
+    const { lastTrackValue } = this.state;
+
+    return (
+      <div className="slider-container">
+        <style jsx>{style}</style>
+
+        <Range
+          pushable
+          trackStyle={[{ backgroundColor: colors.answer2 }]}
+          railStyle={{ backgroundColor: colors.answer1 }}
+          onChange={data => {
+            const diff = differences(data);
+
+            this.setState(state => ({
+              ...state,
+              lastTrackValue: diff[diff.length - 1]
+            }));
+
+            onChange(diff);
+          }}
+          {...rest}
+        />
+
+        <div
+          className="slider-last-track"
+          style={{ width: `${lastTrackValue}%` }}
+        />
+      </div>
+    );
+  }
+}
