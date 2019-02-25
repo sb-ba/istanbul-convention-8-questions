@@ -15,6 +15,7 @@ export default css`
   ul {
     background-color: ${colors.brand};
     display: flex;
+    flex-direction: column;
     flex-wrap: nowrap;
     left: 0;
     list-style: none;

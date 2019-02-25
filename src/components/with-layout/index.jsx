@@ -18,6 +18,9 @@ export default Wrapped => props => {
       <Footer
         contact={translate('footerContact', translations)}
         privacy={translate('footerPrivacy', translations)}
+        istanbulConvention={translate('footerIstanbulConvention', translations)}
+        councilOfEurope={translate('councilOfEurope', translations)}
+        followUs={translate('footerFollowUs', translations)}
       />
     </>
   );

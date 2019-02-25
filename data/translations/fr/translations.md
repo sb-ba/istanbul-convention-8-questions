@@ -18,4 +18,6 @@ councilOfEurope: Council of Europe
 
 footerContact: Contact
 footerPrivacy: Privacy
+footerFollowUs: Follow us on Social Media
+footerIstanbulConvention: Human Rights Channel - Istanbul Convention
 ---

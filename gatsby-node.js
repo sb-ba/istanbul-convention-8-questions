@@ -36,6 +36,8 @@ const createLocalizedQuiz = (graphql, createPage) => {
               councilOfEurope
               footerContact
               footerPrivacy
+              footerFollowUs
+              footerIstanbulConvention
             }
           }
         }
@@ -107,6 +109,8 @@ const createLocalizedQuiz = (graphql, createPage) => {
         }
       }) => {
         const url = language === 'en' ? '/' : `/${language}/`;
+
+        console.log('Create quiz:', language);
 
         return createPage({
           path: url,

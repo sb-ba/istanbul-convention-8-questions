@@ -9,17 +9,23 @@ import TwitterIcon from '../../../static/icons/twitter-square.svg';
 
 import style, { shareIcon, iwdIcon, link, coeLogo } from './style';
 
-export default ({ contact, privacy }) => (
+export default ({
+  contact,
+  privacy,
+  followUs,
+  councilOfEurope,
+  istanbulConvention
+}) => (
   <footer>
     <style jsx>{style}</style>
     {shareIcon.styles}
     {iwdIcon.styles}
     {link.styles}
     {coeLogo.styles}
-    <strong>Council of Europe</strong>
-    <p>Human Rights Channel - Istanbul Convention</p>
+    <strong>{councilOfEurope}</strong>
+    <p>{istanbulConvention}</p>
     <div className="share">
-      <strong className="share-title">Follow us on Social Media</strong>
+      <strong className="share-title">{followUs}</strong>
 
       <FacebookIcon className={shareIcon.className} />
       <TwitterIcon className={shareIcon.className} />
