@@ -13,13 +13,16 @@ export default css`
     margin-top: 0.5rem;
   }
 
-  .answer--index-a,
-  .answer--index-c {
+  .answer--index-a {
     background-color: ${colors.answer1};
   }
 
   .answer--index-b {
     background-color: ${colors.answer2};
+  }
+
+  .answer--index-c {
+    background-color: ${colors.answer3};
   }
 
   .answer--theme-transparent {
@@ -55,12 +58,15 @@ export default css`
     height: 100%;
   }
 
-  .answer--index-a .progress,
-  .answer--index-c .progress {
-    background-image: linear-gradient(to right, transparent, #125d80);
+  .answer--index-a .progress {
+    background-image: linear-gradient(to right, transparent, #0e2b3f);
   }
 
   .answer--index-b .progress {
-    background-image: linear-gradient(to right, transparent, #01646d);
+    background-image: linear-gradient(to right, transparent, #01737e);
+  }
+
+  .answer--index-c .progress {
+    background-image: linear-gradient(to right, transparent, #16688e);
   }
 `;
