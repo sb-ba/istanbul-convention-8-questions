@@ -12,7 +12,7 @@ export default css`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.35rem 1rem;
   }
 
   .title,
@@ -44,17 +44,8 @@ export const linkStyles = css.resolve`
 `;
 
 export const logoStyles = css.resolve`
-  a {
-    color: currentColor;
-    font-size: 0.55rem;
-    font-family: ${fonts.openSans.family};
-    line-height: 1.25;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  a:hover,
-  a:focus {
-    text-decoration: underline;
+  svg {
+    height: 1.55rem;
+    width: 100%;
   }
 `;

@@ -42,6 +42,14 @@ export const iwdIcon = css.resolve`
   }
 `;
 
+export const coeLogo = css.resolve`
+  svg {
+    height: 4rem;
+    margin-top: 5rem;
+    width: 100%;
+  }
+`;
+
 export const link = css.resolve`
   a {
     color: currentColor;

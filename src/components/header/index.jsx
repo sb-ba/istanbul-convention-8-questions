@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import Link from 'gatsby-link';
 import React from 'react';
 
+import COELogo from '../../../static/logos/coe.svg';
 import LanguageSwitch from './language-switch';
 
 import styles, { logoStyles, linkStyles } from './styles';
@@ -18,10 +19,8 @@ export default ({
     {linkStyles.styles}
     {logoStyles.styles}
 
-    <Link to="/" className={logoStyles.className} onClick={onClickLogo}>
-      Council
-      <br /> of
-      <br /> Europe
+    <Link to="/" onClick={onClickLogo}>
+      <COELogo className={logoStyles.className} />
     </Link>
 
     {title && (
