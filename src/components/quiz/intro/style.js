@@ -43,7 +43,7 @@ export default css`
     color: black;
     font-family: ${fonts.bitter.family};
     font-size: 1.25rem;
-    padding: 0.45rem 2rem;
+    padding: 0.75rem 2.25rem;
     text-transform: uppercase;
     width: auto;
   }

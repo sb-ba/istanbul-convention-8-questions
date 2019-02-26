@@ -9,7 +9,7 @@ export default css`
   }
 
   .step + .step {
-    margin-left: 0.075rem;
+    margin-left: 0.15rem;
   }
 
   .step--is-active {

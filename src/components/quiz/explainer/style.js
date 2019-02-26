@@ -1,16 +1,21 @@
 import css from 'styled-jsx/css';
 
-import { fonts } from '../../../tokens';
+import { fonts, mq } from '../../../tokens';
 
 export default css`
   article {
     font-family: ${fonts.openSans.family};
-    min-height: 90vh;
     padding: 1.5rem;
   }
 
+  @media ${mq.desktop} {
+    article {
+      font-size: 1.2rem;
+    }
+  }
+
   .title {
-    font-size: 1rem;
+    font-size: inherit;
   }
 
   ul {

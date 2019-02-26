@@ -4,6 +4,6 @@ export default css`
   .progress {
     display: flex;
     flex-direction: row;
-    margin-top: 0.075rem;
+    margin-top: 0.08rem;
   }
 `;

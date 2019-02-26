@@ -54,7 +54,7 @@ export default class Slider extends React.Component {
 
         <div
           className="slider-last-track"
-          style={{ width: `${lastTrackValue}%` }}
+          style={{ width: `${lastTrackValue + 0.5}%` }}
         />
       </div>
     );

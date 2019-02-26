@@ -170,7 +170,11 @@ export default class Quiz extends Component {
           />
         )}
 
-        {current === -1 && <Explainer {...explainer[0].node} />}
+        {current === -1 && (
+          <div className="question-container">
+            <Explainer {...explainer[0].node} />
+          </div>
+        )}
 
         {!finish && current >= 0 && (
           <div className="question-container" key={`question-${current}`}>
@@ -192,7 +196,7 @@ export default class Quiz extends Component {
         )}
 
         {finish && (
-          <div className="result-container">
+          <div className="question-container">
             <Results
               userAnswers={userAnswers}
               questions={questions}
