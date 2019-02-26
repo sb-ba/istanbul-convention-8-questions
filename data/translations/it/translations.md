@@ -1,6 +1,6 @@
 ---
-next: Next
-previous: Previous
+next: Successiva
+previous: Precedente
 
 introQuestion: Come porre fine alla violenza sulle donne?
 introTitle: 8 domande in occasione della giornata dell’8 marzo
@@ -19,6 +19,6 @@ councilOfEurope: Council of Europe
 
 footerContact: Contact
 footerPrivacy: Privacy
-footerFollowUs: Follow us on Social Media
+footerFollowUs:  Seguici sui social
 footerIstanbulConvention: Human Rights Channel - Istanbul Convention
 ---

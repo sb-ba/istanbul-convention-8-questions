@@ -1,6 +1,6 @@
 ---
-next: Next
-previous: Previous
+next: Nächste
+previous: Vorherige
 
 introQuestion: How do we stop violence against women?
 introTitle: 8 Questions on 8th of March
