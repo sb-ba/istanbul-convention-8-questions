@@ -1,5 +1,5 @@
 # Redirect http to https
-http://8-questions.istanbul-convention.coe.int/* https://8-questions.istanbul-convention.coe.int/:splat 301!
+http://8-questions.istanbul-convention.coe.int https://8-questions.istanbul-convention.coe.int 301
 
 # Language based redirects
 /  /fr  302  Language=fr
