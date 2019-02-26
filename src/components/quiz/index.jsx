@@ -34,8 +34,7 @@ export default class Quiz extends Component {
     userAnswers: {},
     answers: null,
     current: -2,
-    finish: false,
-    isLoading: false
+    finish: false
   };
 
   finish = () => {
@@ -55,20 +54,15 @@ export default class Quiz extends Component {
   previous = () => {
     const { questions } = this.props;
     const { answers, current } = this.state;
-    const { id: questionId } = questions[current].node.frontmatter;
+    const { id: questionId } =
+      current >= 0 && questions[current].node.frontmatter;
 
     this.setState(state => ({
       ...state,
-      isLoading: 'previous'
+      current: state.current - 1
     }));
 
-    persistAnswers(questionId, answers).then(() => {
-      this.setState(state => ({
-        ...state,
-        current: state.current - 1,
-        isLoading: false
-      }));
-    });
+    persistAnswers(questionId, answers);
   };
 
   next = () => {
@@ -77,27 +71,12 @@ export default class Quiz extends Component {
     const { id: questionId } =
       current >= 0 && questions[current].node.frontmatter;
 
-    if (!questionId) {
-      this.setState(state => ({
-        ...state,
-        current: state.current + 1
-      }));
-
-      return Promise.resolve();
-    }
-
     this.setState(state => ({
       ...state,
-      isLoading: 'next'
+      current: state.current + 1
     }));
 
-    return persistAnswers(questionId, answers).then(() => {
-      this.setState(state => ({
-        ...state,
-        current: state.current + 1,
-        isLoading: false
-      }));
-    });
+    persistAnswers(questionId, answers);
   };
 
   render() {
@@ -109,10 +88,10 @@ export default class Quiz extends Component {
       explainer,
       explainerResults
     } = this.props;
-    const { current, finish, isLoading, userAnswers } = this.state;
+    const { current, finish, userAnswers } = this.state;
 
+    const hasPrevious = current > -1;
     const hasNext = !!questions[current + 1];
-    const hasPrevious = !!questions[current - 1];
     const title = finish
       ? translate('resultsTitle', translations)
       : `${translate('questionsTitle', translations)} ${current + 1}/${
@@ -222,7 +201,6 @@ export default class Quiz extends Component {
             showPrevious={hasPrevious && !finish}
             previous={() => this.previous()}
             previousLabel={translate('previous', translations)}
-            isLoading={isLoading}
           />
         )}
       </main>

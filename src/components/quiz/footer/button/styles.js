@@ -19,8 +19,9 @@ export default css`
   @media ${mq.desktop} {
     button {
       border-radius: 50%;
+      font-size: 0.8rem;
       height: 12rem;
-      left: -7rem;
+      left: -8rem;
       position: fixed;
       top: 50%;
       transform: translateY(-50%);
@@ -30,7 +31,7 @@ export default css`
 
     button + button {
       left: auto;
-      right: -7rem;
+      right: -8rem;
     }
   }
 

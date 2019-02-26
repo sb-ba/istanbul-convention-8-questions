@@ -22,6 +22,25 @@ export default css`
       position: static;
     }
   }
+
+  @media ${mq.desktop} {
+    .label {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform-origin: 50% 50%;
+    }
+
+    .label--next {
+      left: 0;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .label--previous {
+      right: -0.5rem;
+      transform: translateY(-50%) rotate(90deg);
+    }
+  }
 `;
 
 export const iconStyles = css.resolve`
@@ -32,11 +51,32 @@ export const iconStyles = css.resolve`
     vertical-align: middle;
     width: 0.9rem;
   }
+
+  @media ${mq.desktop} {
+    svg {
+      height: 1.5rem;
+      left: 1.5rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.5rem;
+    }
+  }
 `;
 
 export const iconStylesPrevious = css.resolve`
   svg {
     margin-left: 0;
     margin-right: 1rem;
+  }
+
+  @media ${mq.desktop} {
+    svg {
+      height: 1.5rem;
+      left: auto;
+      position: absolute;
+      right: 1.5rem;
+      width: 1.5rem;
+    }
   }
 `;
