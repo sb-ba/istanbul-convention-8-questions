@@ -2,7 +2,10 @@ const proxy = require('http-proxy-middleware');
 
 module.exports = {
   siteMetadata: {
-    title: '8M Survey'
+    title: '8M Survey',
+    facebookLink: 'https://www.facebook.com/councilofeurope/',
+    twitterLink: 'https://twitter.com/coe',
+    instagramLink: 'https://www.instagram.com/councilofeurope/'
   },
 
   plugins: [

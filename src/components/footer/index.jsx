@@ -1,3 +1,4 @@
+import { useStaticQuery, graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import React from 'react';
 
@@ -15,30 +16,58 @@ export default ({
   followUs,
   councilOfEurope,
   istanbulConvention
-}) => (
-  <footer>
-    <style jsx>{style}</style>
-    {shareIcon.styles}
-    {iwdIcon.styles}
-    {link.styles}
-    {coeLogo.styles}
-    <strong>{councilOfEurope}</strong>
-    <p>{istanbulConvention}</p>
-    <div className="share">
-      <strong className="share-title">{followUs}</strong>
+}) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          facebookLink
+          twitterLink
+          instagramLink
+        }
+      }
+    }
+  `);
 
-      <FacebookIcon className={shareIcon.className} />
-      <TwitterIcon className={shareIcon.className} />
-      <InstagramIcon className={shareIcon.className} />
-    </div>
-    <Link to="/contact/" className={link.className}>
-      {contact}
-    </Link>
-    |
-    <Link to="/privacy/" className={link.className}>
-      {privacy}
-    </Link>
-    <COELogo className={coeLogo.className} />
-    <InternationalWomensDayLogo className={iwdIcon.className} />
-  </footer>
-);
+  const {
+    site: {
+      siteMetadata: { facebookLink, twitterLink, instagramLink }
+    }
+  } = data;
+
+  return (
+    <footer>
+      <style jsx>{style}</style>
+      {shareIcon.styles}
+      {iwdIcon.styles}
+      {link.styles}
+      {coeLogo.styles}
+      <strong>{councilOfEurope}</strong>
+      <p>{istanbulConvention}</p>
+      <div className="share">
+        <strong className="share-title">{followUs}</strong>
+
+        <a href={facebookLink}>
+          <FacebookIcon className={shareIcon.className} />
+        </a>
+
+        <a href={twitterLink}>
+          <TwitterIcon className={shareIcon.className} />
+        </a>
+
+        <a href={instagramLink}>
+          <InstagramIcon className={shareIcon.className} />
+        </a>
+      </div>
+      <Link to="/contact/" className={link.className}>
+        {contact}
+      </Link>
+      |
+      <Link to="/privacy/" className={link.className}>
+        {privacy}
+      </Link>
+      <COELogo className={coeLogo.className} />
+      <InternationalWomensDayLogo className={iwdIcon.className} />
+    </footer>
+  );
+};

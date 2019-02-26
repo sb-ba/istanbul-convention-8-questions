@@ -22,6 +22,14 @@ export default css`
     margin-top: 0.25rem;
   }
 
+  a {
+    color: currentColor;
+  }
+
+  a + a {
+    margin-left: 1rem;
+  }
+
   .share {
     margin-bottom: 5rem;
     margin-top: 5rem;
@@ -37,10 +45,6 @@ export const shareIcon = css.resolve`
   svg {
     height: 2rem;
     width: 2rem;
-  }
-
-  svg + svg {
-    margin-left: 1rem;
   }
 `;
 
