@@ -21,6 +21,8 @@ const createLocalizedQuiz = (graphql, createPage) => {
             frontmatter {
               next
               previous
+
+              introQuestion
               introTitle
               introIntro
               introButtonLabel

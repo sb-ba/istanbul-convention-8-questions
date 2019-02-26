@@ -1,5 +1,5 @@
 .rc-slider {
-  height: 2.5rem;
+  height: 3.25rem;
   position: relative;
   touch-action: none;
 }
@@ -16,8 +16,9 @@
 .rc-slider-rail::after,
 .rc-slider-track::before {
   color: white;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   font-family: Bitter, serif;
+  line-height: 1;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -25,13 +26,13 @@
 
 .rc-slider-rail::before {
   content: 'A';
-  left: 1.5rem;
+  left: 2rem;
 }
 
 .slider-last-track::after,
 .rc-slider-rail::after {
   content: 'C';
-  right: 1.5rem;
+  right: 2rem;
 }
 
 .rc-slider-track {
@@ -50,10 +51,10 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, .4);
   color: #D4310D;
   cursor: grab;
-  height: 3.85rem;
+  height: 4.25rem;
   outline: none;
   position: absolute;
-  top: -0.65rem;
+  top: -0.5rem;
   touch-action: pan-x;
   transform: translateX(-0.2rem);
   width: 0.5rem;

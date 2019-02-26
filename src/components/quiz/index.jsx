@@ -159,6 +159,7 @@ export default class Quiz extends Component {
 
         {current === -2 && (
           <Intro
+            introQuestion={translate('introQuestion', translations)}
             title={translate('introTitle', translations)}
             intro={translate('introIntro', translations)}
             buttonLabel={translate('introButtonLabel', translations)}

@@ -9,7 +9,7 @@ export default css`
     background-color: ${colors.brand};
     color: white;
     font-family: ${fonts.openSans.family};
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
     text-align: center;
   }
 
@@ -50,9 +50,9 @@ export const shareIcon = css.resolve`
 
 export const iwdIcon = css.resolve`
   svg {
-    height: 10rem;
+    height: 6rem;
     margin-top: 5rem;
-    width: 100%;
+    width: 70%;
   }
 `;
 

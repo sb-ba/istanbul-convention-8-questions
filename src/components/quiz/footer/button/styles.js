@@ -10,8 +10,8 @@ export default css`
     font-family: ${fonts.bitter.family};
     font-size: 1rem;
     letter-spacing: 0.02rem;
-    padding-bottom: 0.75rem;
-    padding-top: 0.75rem;
+    padding-bottom: 0.85rem;
+    padding-top: 0.85rem;
     text-transform: uppercase;
     width: 50%;
   }

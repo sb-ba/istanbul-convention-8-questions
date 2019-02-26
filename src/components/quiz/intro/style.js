@@ -12,8 +12,17 @@ export default css`
     justify-content: center;
     font-family: ${fonts.openSans.family};
     height: 92.2vh;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     text-align: center;
+  }
+
+  .question {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.25;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
   }
 
   .title {
@@ -35,6 +44,7 @@ export default css`
     font-family: ${fonts.bitter.family};
     font-size: 1.25rem;
     padding: 0.45rem 2rem;
+    text-transform: uppercase;
     width: auto;
   }
 
