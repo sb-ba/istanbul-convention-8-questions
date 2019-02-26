@@ -98,30 +98,6 @@
   }
 }
 
-.hand-icon {
-  left: 33%;
-  position: absolute;
-  top: 90%;
-  transform: translateX(-50%) rotate(-10deg);
-  z-index: 50;
-}
-
-.rc-slider-handle-1,
-.hand-icon {
-  animation: ease infinite alternate;
-  animation-delay: 2s;
-  animation-duration: 2s;
-  animation-name: moveHandle;
-  will-change: transform;
-}
-
-@keyframes moveHandle {
-  0% { transform: translateX(-50%); }
-  20% { transform: translateX(-50%); }
-  40%{ transform: translateX(-250%); }
-  100%{ transform: translateX(-50%); }
-}
-
 /* Overwrites for disabled state (Intro) */
 
 .rc-slider-disabled .rc-slider-handle {

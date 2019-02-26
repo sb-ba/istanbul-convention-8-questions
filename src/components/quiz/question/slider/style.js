@@ -18,6 +18,14 @@ export default css`
     width: 10%;
     z-index: 5;
   }
+
+  .hand-icon {
+    left: 33%;
+    position: absolute;
+    top: 90%;
+    transform: translateX(-50%) rotate(-10deg);
+    z-index: 50;
+  }
 `;
 
 export const handIcon = css.resolve`
