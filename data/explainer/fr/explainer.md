@@ -1,10 +1,14 @@
 ---
-title: Did you know …
+title: Saviez-vous…
 points:
-  - title: The Council of Europe’s Istanbul Convention is a human rights convention?
-  - title: It aims to combat violence against women and domestic violence?
-  - title: It was agreed on by all European countries?
+  - title: Que la Convention d’Istanbul du Conseil de l’Europe est une convention qui défend les droits humains ?
+  - title: Qu’elle vise à combattre la violence à l’égard des femmes et la violence domestique ?
+  - title: Qu’elle est le résultat d’une réflexion menée au niveau européen ?
 ---
-The aim is to counter the devastating effect gender-based violence has on women’s lives and to help states prevent, protect and prosecute these crimes.
+Son objectif est de contrer les effets dévastateurs que la violence fondée sur
+le genre a sur la vie des femmes et d'aider les États à prévenir cette forme de
+violence, à protéger les victimes et à poursuivre les auteurs.
 
-It responds to our fears that the women and girls in our life may be attacked or hurt and to provide justice and support if they are.
+C’est une réponse à nos craintes que les femmes et les filles de notre entourage
+puissent être agressées ou blessées. Cette convention vise aussi à rendre
+justice et apporter soutien aux victimes.
