@@ -56,7 +56,7 @@ export default class Question extends Component {
             >
               <Slider
                 defaultValue={[33, 66]}
-                max={100}
+                max={99}
                 min={0}
                 onChange={(data, rawData) => {
                   this.updateResultForAnswers(data, rawData);

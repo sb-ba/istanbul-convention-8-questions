@@ -3,7 +3,9 @@ import { Range } from 'rc-slider';
 
 import { colors } from '../../../../tokens';
 
-import style from './style';
+import HandIcon from '../../../../../static/icons/hand-paper.svg';
+
+import style, { handIcon } from './style';
 import './style.css';
 
 const summarizeArray = arr =>
@@ -33,6 +35,7 @@ export default class Slider extends React.Component {
       trackStyle,
       railStyle,
       disabled,
+      hasAnimation = false,
       ...rest
     } = this.props;
     const { lastTrackValue } = this.state;
@@ -40,6 +43,7 @@ export default class Slider extends React.Component {
     return (
       <div className="slider-container">
         <style jsx>{style}</style>
+        {handIcon.styles}
 
         <Range
           pushable
@@ -58,6 +62,12 @@ export default class Slider extends React.Component {
           disabled={disabled}
           {...rest}
         />
+
+        {hasAnimation && (
+          <span className="hand-icon">
+            <HandIcon className={handIcon.className} />
+          </span>
+        )}
 
         {!disabled && (
           <div

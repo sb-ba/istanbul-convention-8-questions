@@ -22,6 +22,7 @@ export default ({ introQuestion, title, intro, buttonLabel, onStart }) => (
             max={100}
             min={0}
             disabled
+            hasAnimation
           />
         </Suspense>
       )}

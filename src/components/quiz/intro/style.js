@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-import { colors, fonts } from '../../../tokens';
+import { colors, fonts, mq } from '../../../tokens';
 
 export default css`
   article {
@@ -11,9 +11,15 @@ export default css`
     flex-direction: column;
     justify-content: center;
     font-family: ${fonts.openSans.family};
-    height: 92.2vh;
-    padding: 1rem 1.5rem;
+    min-height: 92.2vh;
+    padding: 1.5rem 2rem;
     text-align: center;
+  }
+
+  @media ${mq.desktop} {
+    article {
+      padding: 2.5rem 10rem;
+    }
   }
 
   .question {
@@ -30,6 +36,14 @@ export default css`
     font-size: 2.25rem;
     margin-bottom: 3rem;
     margin-top: 0;
+  }
+
+  @media ${mq.desktop} {
+    .title {
+      font-size: 3.25rem;
+      line-height: 1.1;
+      margin-bottom: 4rem;
+    }
   }
 
   .slider-container {
