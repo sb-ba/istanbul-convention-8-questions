@@ -132,7 +132,7 @@ const createLocalizedQuiz = (graphql, createPage) => {
       }
     );
 
-  const languages = getDirectories('./data/questions');
+  const languages = getDirectories('./data/questions').sort();
 
   return Promise.all(
     languages.map(language => createQuiz(language, languages))

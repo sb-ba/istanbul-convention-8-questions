@@ -3,6 +3,14 @@ import React, { useState } from 'react';
 
 import styles, { linkStyle } from './styles';
 
+const HUMAN_READABLE_LANGUAGES = {
+  de: 'Deutsch',
+  en: 'English',
+  fr: 'Français',
+  it: 'Italiano',
+  ru: 'Русский'
+};
+
 export default ({ current, items }) => {
   const [isOpen, toggleOpen] = useState(false);
 
@@ -31,7 +39,7 @@ export default ({ current, items }) => {
                   to={language === 'en' ? '/' : `/${language}/`}
                   className={linkStyle.className}
                 >
-                  {language}
+                  {HUMAN_READABLE_LANGUAGES[language] || language}
                 </Link>
               </li>
             ))}
