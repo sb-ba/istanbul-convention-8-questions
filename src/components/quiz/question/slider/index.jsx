@@ -28,7 +28,13 @@ export default class Slider extends React.Component {
   };
 
   render() {
-    const { onChange = () => {}, ...rest } = this.props;
+    const {
+      onChange = () => {},
+      trackStyle,
+      railStyle,
+      disabled,
+      ...rest
+    } = this.props;
     const { lastTrackValue } = this.state;
 
     return (
@@ -37,8 +43,8 @@ export default class Slider extends React.Component {
 
         <Range
           pushable
-          trackStyle={[{ backgroundColor: colors.answer2 }]}
-          railStyle={{ backgroundColor: colors.answer1 }}
+          trackStyle={trackStyle || [{ backgroundColor: colors.answer2 }]}
+          railStyle={railStyle || { backgroundColor: colors.answer1 }}
           onChange={data => {
             const diff = differences(data);
 
@@ -49,13 +55,16 @@ export default class Slider extends React.Component {
 
             onChange(diff);
           }}
+          disabled={disabled}
           {...rest}
         />
 
-        <div
-          className="slider-last-track"
-          style={{ width: `${lastTrackValue + 0.5}%` }}
-        />
+        {!disabled && (
+          <div
+            className="slider-last-track"
+            style={{ width: `${lastTrackValue + 0.5}%` }}
+          />
+        )}
       </div>
     );
   }

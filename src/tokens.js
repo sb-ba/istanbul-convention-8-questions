@@ -5,7 +5,7 @@ export const colors = {
   answer2: '#00838F',
   answer3: '#1B7EAC',
   brand: 'rgb(18, 55, 81)',
-  darkGrey: '#4A4A4A',
+  darkGrey: '#737373',
   lightGrey: '#E5E4E4',
   green: '#118566',
   red: '#D4310D'

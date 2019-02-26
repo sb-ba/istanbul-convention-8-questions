@@ -28,8 +28,19 @@ export default css`
   .title {
     font-family: ${fonts.bitter.family};
     font-size: 2.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     margin-top: 0;
+  }
+
+  .slider-container {
+    margin: 0 auto 1.5rem auto;
+    max-width: 20rem;
+    min-height: 3.5rem;
+    width: 100%;
+  }
+
+  .slider-intro {
+    letter-spacing: 0.07rem;
   }
 
   .button-container {
@@ -39,18 +50,18 @@ export default css`
   button {
     appearance: none;
     background: white;
-    border: 2px solid white;
+    border: none;
     color: black;
     font-family: ${fonts.bitter.family};
     font-size: 1.25rem;
-    padding: 0.75rem 2.25rem;
+    padding: 0.65rem 2.75rem;
     text-transform: uppercase;
     width: auto;
   }
 
   button:hover,
   button:focus {
-    background-color: ${colors.red};
+    background-color: ${colors.darkGrey};
     color: white;
     cursor: pointer;
   }

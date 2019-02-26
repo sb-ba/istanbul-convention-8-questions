@@ -97,3 +97,14 @@
     opacity: 1;
   }
 }
+
+/* Overwrites for disabled state (Intro) */
+
+.rc-slider-disabled .rc-slider-handle {
+  cursor: default;
+}
+
+.rc-slider-disabled .rc-slider-handle::before,
+.rc-slider-disabled  .rc-slider-handle::after {
+  display: none;
+}
