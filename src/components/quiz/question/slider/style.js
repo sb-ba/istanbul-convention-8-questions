@@ -24,6 +24,8 @@ export default css`
     position: absolute;
     top: 90%;
     transform: translateX(-50%) rotate(-10deg);
+    transition: left 100ms ease;
+    will-change: left;
     z-index: 50;
   }
 `;

@@ -58,7 +58,12 @@
   touch-action: pan-x;
   transform: translateX(-0.2rem);
   width: 0.5rem;
+  will-change: left;
   z-index: 20;
+}
+
+.has-animation .rc-slider-handle {
+  transition: left 50ms linear;
 }
 
 .rc-slider-handle::before,

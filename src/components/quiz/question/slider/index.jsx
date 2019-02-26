@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React from 'react';
 import { Range } from 'rc-slider';
 
@@ -26,6 +27,7 @@ const differences = data =>
 
 export default class Slider extends React.Component {
   state = {
+    firstTrackValue: 33,
     lastTrackValue: 33
   };
 
@@ -36,12 +38,18 @@ export default class Slider extends React.Component {
       railStyle,
       disabled,
       hasAnimation = false,
+      value,
+      handPosition = 33,
       ...rest
     } = this.props;
     const { lastTrackValue } = this.state;
 
     return (
-      <div className="slider-container">
+      <div
+        className={classnames('slider-container', {
+          'has-animation': hasAnimation
+        })}
+      >
         <style jsx>{style}</style>
         {handIcon.styles}
 
@@ -54,17 +62,19 @@ export default class Slider extends React.Component {
 
             this.setState(state => ({
               ...state,
+              firstTrackValue: diff[0],
               lastTrackValue: diff[diff.length - 1]
             }));
 
             onChange(diff);
           }}
           disabled={disabled}
+          {...(value ? { value } : {})}
           {...rest}
         />
 
-        {hasAnimation && (
-          <span className="hand-icon">
+        {hasAnimation && handPosition && (
+          <span className="hand-icon" style={{ left: `${handPosition}%` }}>
             <HandIcon className={handIcon.className} />
           </span>
         )}
