@@ -87,6 +87,9 @@ const createLocalizedQuiz = (graphql, createPage) => {
             folderGroup: { eq: "questions" }
             folder: { eq: "${language}" }
           }
+        },
+        sort: {
+          fields: [frontmatter___id]
         }
       ) {
         edges {
