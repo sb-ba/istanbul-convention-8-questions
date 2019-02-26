@@ -13,6 +13,7 @@ export default css`
     flex-direction: row;
     justify-content: space-between;
     padding: 0.5rem 1rem 0.35rem 1rem;
+    position: relative;
   }
 
   .title,

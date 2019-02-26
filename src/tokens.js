@@ -7,6 +7,7 @@ export const colors = {
   brand: 'rgb(18, 55, 81)',
   darkGrey: '#737373',
   lightGrey: '#E5E4E4',
+  black: '#333333',
   green: '#118566',
   red: '#D4310D'
 };

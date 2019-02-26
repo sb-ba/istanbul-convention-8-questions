@@ -9,11 +9,10 @@ export default css`
     font-family: ${fonts.openSans.family};
     font-size: 0.9rem;
     font-weight: ${fonts.openSans.weight.semibold};
-    position: relative;
   }
 
   ul {
-    background-color: ${colors.brand};
+    background-color: ${colors.black};
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -24,6 +23,10 @@ export default css`
     position: absolute;
     top: 100%;
     width: 100%;
+  }
+
+  li + li {
+    border-top: 1px solid ${colors.darkGrey};
   }
 
   button {
@@ -61,11 +64,18 @@ export default css`
 
 export const linkStyle = css.resolve`
   a {
-    border-top: 1px solid currentColor;
     color: currentColor;
     display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
     padding: 0.5rem 1rem;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: ${colors.darkGrey};
   }
 `;
