@@ -1,9 +1,9 @@
-**Check your country has ratified the Istanbul Convention**
-If not- why not write to your MP?
+**Vérifier si votre pays a ratifié la Convention**
+Si non - pourquoi ne pas écrire à votre député ?
 
 **If you would like to learn more about the Istanbul Convention**
 
-Visit our websites:
+VISITEZ notre site web:
 
 https://www.coe.int/conventionviolence
 https://www.coe.int/en/web/human-rights-channel/end-violence-against-women

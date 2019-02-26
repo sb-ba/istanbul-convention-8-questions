@@ -10,15 +10,15 @@ introButtonLabel: Start
 questionsTitle: Question
 
 resultsTitle: Results
-resultsThankYou: Thank you
-resultsCompare: Compare your Answers with the Average
-resultsShare: Share
-resultsAction: Now you know a bit more about the Istanbul Convention – what can you do?
+resultsThankYou: MERCI !
+resultsCompare: COMPAREZ VOS RÉPONSES EN CONSULTANT LES STATISTIQUES
+resultsShare: Partager
+resultsAction: Maintenant que vous en savez un peu plus sur la Convention d’Istanbul, que pouvez-vous faire?
 
 councilOfEurope: Council of Europe
 
 footerContact: Contact
 footerPrivacy: Privacy
-footerFollowUs: Follow us on Social Media
+footerFollowUs: Suivez-nous sur les réseaux sociaux
 footerIstanbulConvention: Human Rights Channel - Istanbul Convention
 ---
