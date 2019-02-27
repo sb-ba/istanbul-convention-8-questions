@@ -63,7 +63,7 @@ export default css`
   }
 
   .answer--index-b .progress {
-    background-image: linear-gradient(to right, transparent, #01737e);
+    background-image: linear-gradient(to right, transparent, #01646d);
   }
 
   .answer--index-c .progress {

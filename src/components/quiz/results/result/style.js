@@ -29,13 +29,16 @@ export default css`
     top: 0;
   }
 
-  .result--index-0 .progress,
-  .result--index-2 .progress {
-    background-image: linear-gradient(to right, transparent, #125d80);
+  .result--index-0 .progress {
+    background-image: linear-gradient(to right, transparent, #0e2b3f);
   }
 
   .result--index-1 .progress {
     background-image: linear-gradient(to right, transparent, #01646d);
+  }
+
+  .result--index-2 .progress {
+    background-image: linear-gradient(to right, transparent, #16688e);
   }
 
   .label {
