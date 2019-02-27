@@ -2,7 +2,7 @@ import React from 'react';
 
 import FacebookIcon from '../../../../../static/icons/facebook-square.svg';
 import TwitterIcon from '../../../../../static/icons/twitter-square.svg';
-import EnvelopeIcon from '../../../../../static/icons/envelope-square.svg';
+import EnvelopeIcon from '../../../../../static/icons/envelope.svg';
 
 import style, { shareIconStyle } from './style';
 
