@@ -10,9 +10,11 @@ export default css`
     font-family: ${fonts.bitter.family};
     font-size: 1rem;
     letter-spacing: 0.02rem;
+    outline: none;
     padding-bottom: 0.85rem;
     padding-top: 0.85rem;
     text-transform: uppercase;
+    user-select: none;
     width: 50%;
   }
 
@@ -45,15 +47,18 @@ export default css`
     cursor: pointer;
   }
 
+  button:active {
+    background: ${colors.darkGrey};
+  }
+
   button[disabled] {
-    color: rgb(152, 152, 152);
-    opacity: 0.8;
+    color: rgb(134, 134, 134);
   }
 
   button[disabled]:hover,
   button[disabled]:focus {
     background: ${colors.darkGrey};
-    color: rgb(152, 152, 152);
+    color: rgb(134, 134, 134);
     cursor: default;
   }
 `;

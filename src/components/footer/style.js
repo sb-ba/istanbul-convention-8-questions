@@ -26,6 +26,11 @@ export default css`
     color: currentColor;
   }
 
+  a:hover,
+  a:focus {
+    color: ${colors.darkGrey};
+  }
+
   a + a {
     margin-left: 1rem;
   }

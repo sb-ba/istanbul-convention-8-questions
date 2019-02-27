@@ -34,6 +34,7 @@ export default css`
   .title {
     font-family: ${fonts.bitter.family};
     font-size: 2.25rem;
+    letter-spacing: 0.05rem;
     margin-bottom: 3rem;
     margin-top: 0;
   }
@@ -68,6 +69,7 @@ export default css`
     color: black;
     font-family: ${fonts.bitter.family};
     font-size: 1.25rem;
+    letter-spacing: 0.05rem;
     padding: 0.65rem 2.75rem;
     text-transform: uppercase;
     width: auto;
