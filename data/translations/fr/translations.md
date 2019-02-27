@@ -2,8 +2,8 @@
 next: Suivant
 previous: Précédent
 
-introQuestion: Comment pouvons-nous mettre fin à la violence à l’égard des femmes?
-introTitle: 8 Questions le 8 mars
+introQuestion: Comment pouvons-nous <br/> mettre fin à la violence à <br/> l’égard des femmes?
+introTitle: 8 Questions <br/> le <br/> 8 mars
 introIntro: Slide the bar to rank your responses
 introButtonLabel: Start
 

@@ -2,8 +2,8 @@
 next: Next
 previous: Previous
 
-introQuestion: How do we stop violence against women?
-introTitle: 8 Questions on 8th of March
+introQuestion: How do we stop violence <br/> against women?
+introTitle: 8 Questions <br/> on <br/> 8th of March
 introIntro: Slide the bar to rank your responses
 introButtonLabel: Start
 

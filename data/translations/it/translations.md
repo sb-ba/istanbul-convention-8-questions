@@ -2,8 +2,8 @@
 next: Successiva
 previous: Precedente
 
-introQuestion: Come porre fine alla violenza sulle donne?
-introTitle: 8 domande in occasione della giornata dell’8 marzo
+introQuestion: Come porre fine alla <br /> violenza sulle donne?
+introTitle: 8 domande in <br/> occasione della giornata <br/> dell’8 marzo
 introIntro: Fai scorrere la barra per posizionare le tue risposte
 introButtonLabel: Inizia
 

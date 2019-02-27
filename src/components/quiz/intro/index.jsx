@@ -81,9 +81,14 @@ export default class Intro extends React.Component {
       <article>
         <style jsx>{style}</style>
 
-        <strong className="question">{introQuestion}</strong>
+        {/* eslint-disable-next-line react/no-danger */}
+        <strong
+          className="question"
+          dangerouslySetInnerHTML={{ __html: introQuestion }}
+        />
 
-        <h1 className="title">{title}</h1>
+        {/* eslint-disable-next-line react/no-danger */}
+        <h1 className="title" dangerouslySetInnerHTML={{ __html: title }} />
 
         <div className="slider-container">
           {typeof window !== 'undefined' && (
