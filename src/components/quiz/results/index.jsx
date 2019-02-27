@@ -12,7 +12,9 @@ const findAnswerResult = (questionId, answerIndex, answers) => {
     ({ questionId: answerQuestionId }) => answerQuestionId === questionId
   );
 
-  return question && question[`answer${answerIndex}`];
+  const round = num => Math.round(num * 100) / 100;
+
+  return question && round(parseFloat(question[`answer${answerIndex}`], 10));
 };
 
 export default ({

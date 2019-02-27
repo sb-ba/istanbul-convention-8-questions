@@ -5,7 +5,9 @@ import { colors, fonts } from '../../../../tokens';
 export default css`
   .result {
     color: white;
-    padding: 0.5rem;
+    font-size: 0;
+    line-height: 1;
+    padding: 0.55rem 1rem 0.55rem 1rem;
     position: relative;
   }
 
@@ -41,13 +43,30 @@ export default css`
     background-image: linear-gradient(to right, transparent, #16688e);
   }
 
-  .label {
+  .label,
+  .value {
+    display: inline-block;
     font-family: ${fonts.openSans.family};
-    font-size: 0.75rem;
+    line-height: 1;
     margin-bottom: 0;
     margin-top: 0;
-    position: relative;
+
     text-transform: uppercase;
+    vertical-align: middle;
     z-index: 10;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    margin-right: 1rem;
+    position: relative;
+    top: 0.05rem;
+  }
+
+  .value {
+    font-size: 1.1rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(1rem, -50%);
   }
 `;
