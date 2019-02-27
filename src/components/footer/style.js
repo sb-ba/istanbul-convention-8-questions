@@ -9,7 +9,7 @@ export default css`
     background-color: ${colors.brand};
     color: white;
     font-family: ${fonts.openSans.family};
-    padding: 1.5rem 1.5rem 5rem 1.5rem;
+    padding: 4rem 1.5rem 5rem 1.5rem;
     text-align: center;
   }
 
