@@ -5,7 +5,7 @@ import { fonts, mq } from '../../../tokens';
 export default css`
   article {
     font-family: ${fonts.openSans.family};
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
 
   @media ${mq.desktop} {
