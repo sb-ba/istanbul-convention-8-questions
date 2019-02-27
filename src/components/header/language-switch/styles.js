@@ -79,3 +79,11 @@ export const linkStyle = css.resolve`
     background-color: ${colors.darkGrey};
   }
 `;
+
+export const linkActiveStyle = css.resolve`
+  a,
+  a:hover,
+  a:focus {
+    background-color: ${colors.darkGrey};
+  }
+`;

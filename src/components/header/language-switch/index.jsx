@@ -1,7 +1,8 @@
+import classnames from 'classnames';
 import Link from 'gatsby-link';
 import React, { useState } from 'react';
 
-import styles, { linkStyle } from './styles';
+import styles, { linkStyle, linkActiveStyle } from './styles';
 
 const HUMAN_READABLE_LANGUAGES = {
   de: 'Deutsch',
@@ -18,6 +19,7 @@ export default ({ current, items }) => {
     <div className="language-switch">
       <style jsx>{styles}</style>
       {linkStyle.styles}
+      {linkActiveStyle.styles}
 
       <button
         type="button"
@@ -31,18 +33,18 @@ export default ({ current, items }) => {
 
       {isOpen && (
         <ul>
-          {items
-            .filter(language => language !== current)
-            .map(language => (
-              <li key={`language-${language}`}>
-                <Link
-                  to={language === 'en' ? '/' : `/${language}/`}
-                  className={linkStyle.className}
-                >
-                  {HUMAN_READABLE_LANGUAGES[language] || language}
-                </Link>
-              </li>
-            ))}
+          {items.map(language => (
+            <li key={`language-${language}`}>
+              <Link
+                to={language === 'en' ? '/' : `/${language}/`}
+                className={classnames(linkStyle.className, {
+                  [linkActiveStyle.className]: language === current
+                })}
+              >
+                {HUMAN_READABLE_LANGUAGES[language] || language}
+              </Link>
+            </li>
+          ))}
         </ul>
       )}
     </div>
