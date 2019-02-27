@@ -19,7 +19,7 @@ export default ({
     {linkStyles.styles}
     {logoStyles.styles}
 
-    <Link to="/" onClick={onClickLogo}>
+    <Link to="/" onClick={onClickLogo} className={linkStyles.className}>
       <COELogo className={logoStyles.className} />
     </Link>
 

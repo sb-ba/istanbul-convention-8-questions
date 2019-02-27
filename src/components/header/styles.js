@@ -38,9 +38,8 @@ export default css`
 
 export const linkStyles = css.resolve`
   a {
-    color: currentColor;
-    text-decoration: none;
-    text-transform: uppercase;
+    display: inline-block;
+    width: 2rem;
   }
 `;
 
