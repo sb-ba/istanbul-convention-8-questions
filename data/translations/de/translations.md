@@ -1,24 +1,24 @@
 ---
-next: Nächste
-previous: Vorherige
+next: Weiter
+previous: Zurück
 
-introQuestion: How do we stop violence against women?
-introTitle: 8 Questions on 8th of March
+introQuestion: Wie stoppen wir Gewalt gegen Frauen?
+introTitle: 8 Fragen zum 8. März
 introIntro: Slide the bar to rank your responses
 introButtonLabel: Start
 
 questionsTitle: Question
 
 resultsTitle: Results
-resultsThankYou: Thank you
-resultsCompare: Compare your Answers with the Average
-resultsShare: Share
-resultsAction: Now you know a bit more about the Istanbul Convention – what can you do?
+resultsThankYou: Danke
+resultsCompare: Vergleichen Sie Ihre Antworten mit den Gesamtantworten
+resultsShare: Geben Sie Ihr Wissen an andere weiter
+resultsAction: Jetzt wissen Sie etwas mehr über die Istanbul-Konvention. Was können Sie tun?
 
 councilOfEurope: Council of Europe
 
 footerContact: Contact
 footerPrivacy: Privacy
-footerFollowUs: Follow us on Social Media
+footerFollowUs: Folgen Sie uns in den sozialen Medien
 footerIstanbulConvention: Human Rights Channel - Istanbul Convention
 ---
