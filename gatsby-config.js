@@ -5,7 +5,8 @@ module.exports = {
     title: '8M Survey',
     facebookLink: 'https://www.facebook.com/councilofeurope/',
     twitterLink: 'https://twitter.com/coe',
-    instagramLink: 'https://www.instagram.com/councilofeurope/'
+    instagramLink: 'https://www.instagram.com/councilofeurope/',
+    contactLink: 'https://www.coe.int/en/web/portal/contacts'
   },
 
   plugins: [

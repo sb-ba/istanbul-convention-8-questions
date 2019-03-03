@@ -24,6 +24,7 @@ export default ({
           facebookLink
           twitterLink
           instagramLink
+          contactLink
         }
       }
     }
@@ -31,7 +32,7 @@ export default ({
 
   const {
     site: {
-      siteMetadata: { facebookLink, twitterLink, instagramLink }
+      siteMetadata: { facebookLink, twitterLink, instagramLink, contactLink }
     }
   } = data;
 
@@ -59,9 +60,9 @@ export default ({
           <InstagramIcon className={shareIcon.className} />
         </a>
       </div>
-      <Link to="/contact/" className={link.className}>
+      <a href={contactLink} className={link.className}>
         {contact}
-      </Link>
+      </a>
       |
       <Link to="/privacy/" className={link.className}>
         {privacy}
