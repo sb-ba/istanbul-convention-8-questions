@@ -9,9 +9,13 @@ import Footer from '../footer';
 import styles from './styles';
 
 export default Wrapped => props => {
-  const {
-    pageContext: { language, translations }
-  } = props;
+  const { data, pageContext } = props;
+
+  const { language } = pageContext;
+
+  const translations =
+    (data && data.translations && data.translations.edges) ||
+    (pageContext && pageContext.translations && pageContext.translations);
 
   const title = stripHTML(translate('introTitle', translations));
 

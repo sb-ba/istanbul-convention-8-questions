@@ -21,31 +21,35 @@ export default ({ current, items }) => {
       {linkStyle.styles}
       {linkActiveStyle.styles}
 
-      <button
-        type="button"
-        onClick={event => {
-          event.preventDefault();
-          toggleOpen(!isOpen);
-        }}
-      >
-        {current}
-      </button>
+      {items && (
+        <>
+          <button
+            type="button"
+            onClick={event => {
+              event.preventDefault();
+              toggleOpen(!isOpen);
+            }}
+          >
+            {current}
+          </button>
 
-      {isOpen && (
-        <ul>
-          {items.map(language => (
-            <li key={`language-${language}`}>
-              <Link
-                to={language === 'en' ? '/' : `/${language}/`}
-                className={classnames(linkStyle.className, {
-                  [linkActiveStyle.className]: language === current
-                })}
-              >
-                {HUMAN_READABLE_LANGUAGES[language] || language}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          {isOpen && (
+            <ul>
+              {items.map(language => (
+                <li key={`language-${language}`}>
+                  <Link
+                    to={language === 'en' ? '/' : `/${language}/`}
+                    className={classnames(linkStyle.className, {
+                      [linkActiveStyle.className]: language === current
+                    })}
+                  >
+                    {HUMAN_READABLE_LANGUAGES[language] || language}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
       )}
     </div>
   );
