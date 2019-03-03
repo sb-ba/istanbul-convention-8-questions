@@ -13,8 +13,6 @@ import Question from './question';
 
 import styles from './styles';
 
-const stripHTML = str => str.replace(/<(?:.|\n)*?>/gm, '');
-
 const persistAnswers = (questionId, data) => {
   const payload = {
     questionId,
@@ -104,11 +102,7 @@ export default class Quiz extends Component {
       <main>
         <style jsx>{styles}</style>
 
-        {current >= 0 ? (
-          <Helmet title={title} />
-        ) : (
-          <Helmet title={stripHTML(translate('introTitle', translations))} />
-        )}
+        {current >= 0 && <Helmet title={title} />}
 
         <Header
           items={[['/', 'Home']]}
