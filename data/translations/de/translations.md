@@ -11,7 +11,7 @@ questionsTitle: Frage
 
 resultsTitle: Ergebnisse
 resultsThankYou: Danke
-resultsCompare: Vergleichen Sie Ihre Antworten mit den Gesamtantworten
+resultsCompare: Vergleichen Sie Ihre Antworten mit Anderen
 resultsShare: Geben Sie Ihr Wissen an andere weiter
 resultsAction: Jetzt wissen Sie etwas mehr über die Istanbul-Konvention. Was können Sie tun?
 

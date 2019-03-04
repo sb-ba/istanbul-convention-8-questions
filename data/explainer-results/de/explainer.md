@@ -1,4 +1,4 @@
-**Prüfen Sie, ob Ihr Land die Istanbul-Konvention ratifiziert hat:**
+**Sehen Sie nach, ob Ihr Land die Istanbul-Konvention ratifiziert hat:**
 Falls nicht: Warum schreiben Sie nicht Ihrem/Ihrer Parlamentsabgeordneten?
 
 **Wenn Sie mehr über die Istanbul-Konvention erfahren möchten**
