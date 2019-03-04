@@ -26,10 +26,21 @@ export default Wrapped => props => {
       <Helmet>
         <title>{title}</title>
 
+        {/* facebook OG */}
         <meta name="og:title" content={title} />
         <meta
           name="og:image"
           content={`/images/share/${language}/facebook.png`}
+        />
+
+        {/* twitter card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@coe" />
+        <meta name="twitter:creator" content="@coe" />
+        <meta name="twitter:title" content={title} />
+        <meta
+          name="twitter:image"
+          content={`/images/share/${language}/twitter.png`}
         />
       </Helmet>
 
