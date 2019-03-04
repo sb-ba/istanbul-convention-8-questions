@@ -3,18 +3,15 @@ import Helmet from 'react-helmet';
 import React from 'react';
 
 import Header from '../../components/header';
+import Page from '../../components/page';
 import withLayout from '../../components/with-layout';
-
-import style from './style';
 
 export default withLayout(() => {
   return (
     <>
       <Helmet title="Privacy Statement" />
       <Header title="Privacy Statement" />
-      <article>
-        <style jsx>{style}</style>
-
+      <Page>
         <h2>Objective</h2>
 
         <p>
@@ -140,7 +137,7 @@ export default withLayout(() => {
           <br />
           <a href="mailto:datacommissioner@coe.int">datacommissioner@coe.int</a>
         </p>
-      </article>
+      </Page>
     </>
   );
 });
