@@ -1,3 +1,4 @@
+import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import React from 'react';
 
@@ -19,6 +20,22 @@ export default Wrapped => props => {
 
   const title = stripHTML(translate('introTitle', translations));
 
+  const metadata = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          url
+        }
+      }
+    }
+  `);
+
+  const {
+    site: {
+      siteMetadata: { url }
+    }
+  } = metadata;
+
   return (
     <div className="app">
       <style jsx>{styles}</style>
@@ -30,7 +47,7 @@ export default Wrapped => props => {
         <meta name="og:title" content={title} />
         <meta
           name="og:image"
-          content={`/images/share/${language}/facebook.png`}
+          content={`${url}/images-share/${language}/facebook.png`}
         />
 
         {/* twitter card */}
@@ -40,7 +57,7 @@ export default Wrapped => props => {
         <meta name="twitter:title" content={title} />
         <meta
           name="twitter:image"
-          content={`/images/share/${language}/twitter.png`}
+          content={`${url}/images-share/${language}/twitter.png`}
         />
       </Helmet>
 

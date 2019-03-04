@@ -6,7 +6,8 @@ module.exports = {
     facebookLink: 'https://www.facebook.com/councilofeurope/',
     twitterLink: 'https://twitter.com/coe',
     instagramLink: 'https://www.instagram.com/councilofeurope/',
-    contactLink: 'https://www.coe.int/en/web/portal/contacts'
+    contactLink: 'https://www.coe.int/en/web/portal/contacts',
+    url: 'https://8-questions.istanbul-convention.coe.int'
   },
 
   plugins: [
