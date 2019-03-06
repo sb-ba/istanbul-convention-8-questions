@@ -44,11 +44,18 @@ export default Wrapped => props => {
         <title>{title}</title>
 
         {/* facebook OG */}
-        <meta name="og:title" content={title} />
+        <meta property="og:title" content={title} />
         <meta
-          name="og:image"
+          property="og:url"
+          content={`${url}${language ? `/${language}` : ''}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
           content={`${url}/images-share/${language}/facebook.png`}
         />
+        <meta property="og:image:width" content="1230" />
+        <meta property="og:image:height" content="630" />
 
         {/* twitter card */}
         <meta name="twitter:card" content="summary_large_image" />
