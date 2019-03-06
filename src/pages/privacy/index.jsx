@@ -39,8 +39,6 @@ export default withLayout(() => {
           (percentages)
         </p>
 
-        <p>Analytics are performed by the Council of Europe using Matomo.</p>
-
         <h2>
           What personal information do we collect, for what purpose and through
           which technical means?
@@ -71,21 +69,7 @@ export default withLayout(() => {
             performed: (i) questionId (number)and (ii) answer1, answer2, answer3
             (percentages)
           </li>
-
-          <li>
-            Furthermore, to make this website work properly, we place small data
-            files called “cookies” on your device. These cookies enable the
-            website to remember the session ID of authenticated users, keeping
-            them logged in for a given period.
-          </li>
         </ol>
-
-        <p>
-          The 8 Questions for 8 March website uses Matomo Analytics, a web
-          analytics service to help analyse the use of this website on the basis
-          of visitors’ behaviour. More information about the use of cookies on
-          Council of Europe websites can be found at the following link.
-        </p>
 
         <h2>Who has access to your information and to whom is it disclosed?</h2>
 
