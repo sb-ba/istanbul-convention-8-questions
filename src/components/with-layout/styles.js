@@ -26,8 +26,8 @@ export default css`
     font-family: 'Bitter';
     font-display: swap;
     font-weight: 700;
-    src: url('/fonts/bitter/bitter.woff2') format('woff2'),
-      url('/fonts/bitter/bitter.woff') format('woff');
+    src: url('/fonts/bitter/bitter-bold.woff2') format('woff2'),
+      url('/fonts/bitter/bitter-bold.woff') format('woff');
   }
 
   @font-face {
