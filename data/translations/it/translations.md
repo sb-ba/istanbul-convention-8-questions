@@ -4,7 +4,7 @@ previous: Precedente
 
 introQuestion: Come porre fine alla <br /> violenza sulle donne?
 introTitle: 8 Domande <br /> su <br /> 8 Marzo
-introIntro: Fai scorrere la barra per posizionare le tue risposte
+introIntro: Fai scorrere la barra per<br /> posizionare le tue risposte
 introButtonLabel: Inizia
 
 questionsTitle: Domanda

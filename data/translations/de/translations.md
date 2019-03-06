@@ -2,9 +2,9 @@
 next: Weiter
 previous: Zurück
 
-introQuestion: Wie stoppen wir Gewalt gegen Frauen?
+introQuestion: Wie stoppen wir<br /> Gewalt gegen Frauen?
 introTitle: 8 Fragen<br/> zum<br/> 8. März
-introIntro: Bewerten Sie durch Verschieben des Reglers Ihre Antworten
+introIntro: Bewerten Sie durch Verschieben<br /> des Reglers Ihre Antworten
 introButtonLabel: Start
 
 questionsTitle: Frage

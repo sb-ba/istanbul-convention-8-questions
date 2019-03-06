@@ -109,7 +109,12 @@ export default class Intro extends React.Component {
           )}
         </div>
 
-        <p className="slider-intro">{intro}</p>
+        {/* eslint-disable react/no-danger */}
+        <p
+          className="slider-intro"
+          dangerouslySetInnerHTML={{ __html: intro }}
+        />
+        {/* eslint-enable react/no-danger */}
 
         <div className="button-container">
           <button type="button" onClick={onStart}>
