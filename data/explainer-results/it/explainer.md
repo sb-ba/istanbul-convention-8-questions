@@ -8,7 +8,8 @@ Visita il nostro website:
 https://www.coe.int/conventionviolence
 https://www.coe.int/en/web/human-rights-channel/end-violence-against-women
 
-**Learn**
+**Impara**
 
-Our free on-line course is available here:
+Troverai qui il nostro corso online gratuito:
+
 https://www.coe.int/en/web/istanbul-convention/help-online-course

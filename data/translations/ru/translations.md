@@ -3,7 +3,7 @@ next: СЛЕДУЮЩАЯ
 previous: ПРЕДЫДУЩАЯ
 
 introQuestion: Как можно прекратить насилие в отношении женщин?
-introTitle:  8 вопросов на 8 марта
+introTitle: 8 вопросов <br /> на <br /> 8 марта
 introIntro: Fai scorrere la barra per posizionare le tue risposte
 introButtonLabel: Inizia
 
