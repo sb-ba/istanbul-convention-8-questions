@@ -112,10 +112,12 @@ export default ({
 
       <Share />
 
+      {/* eslint-disable react/no-danger */}
       <article
         className="explainer"
         dangerouslySetInnerHTML={{ __html: explainer.node.html }}
       />
+      {/* eslint-enable react/no-danger */}
     </div>
   );
 };

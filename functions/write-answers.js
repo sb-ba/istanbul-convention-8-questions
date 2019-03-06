@@ -7,8 +7,30 @@ const mysql = require('serverless-mysql')({
   }
 });
 
-exports.handler = async (event, context) => {
-  const { questionId, answers } = JSON.parse(event.body);
+exports.handler = async event => {
+  const { questionId, answers, s } = JSON.parse(event.body);
+
+  if (!answers) {
+    return {
+      statusCode: 422,
+      body: 'No answers provided.'
+    };
+  }
+
+  // ensure the sum of all answers is always 99%
+  const answersSum = answers.reduce((sum, current) => {
+    // eslint-disable-next-line no-param-reassign
+    sum += parseInt(current, 10);
+    return sum;
+  }, 0);
+
+  if (!s || s !== 'ic-8m' || answersSum !== 99) {
+    return {
+      statusCode: 422,
+      body: 'Wrong secret or sum.'
+    };
+  }
+
   const query = `
     INSERT INTO answers (
       questionId,
@@ -31,11 +53,9 @@ exports.handler = async (event, context) => {
       body: ''
     };
   } catch (err) {
-    context.fail(err);
-
     return {
       statusCode: 500,
-      body: ''
+      body: 'Database was unable to save the results.'
     };
   }
 };

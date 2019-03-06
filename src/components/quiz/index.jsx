@@ -16,7 +16,8 @@ import styles from './styles';
 const persistAnswers = (questionId, data) => {
   const payload = {
     questionId,
-    answers: data
+    answers: data,
+    s: 'ic-8m'
   };
 
   return fetch('/.netlify/functions/write-answers', {

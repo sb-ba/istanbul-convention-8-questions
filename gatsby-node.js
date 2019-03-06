@@ -117,6 +117,7 @@ const createLocalizedQuiz = (graphql, createPage) => {
       }) => {
         const url = language === 'en' ? '/' : `/${language}/`;
 
+        // eslint-disable-next-line no-console
         console.log('Create quiz:', language);
 
         return createPage({

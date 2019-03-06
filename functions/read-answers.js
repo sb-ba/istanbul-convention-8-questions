@@ -7,7 +7,7 @@ const mysql = require('serverless-mysql')({
   }
 });
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
   const query = `
     SELECT
       questionId,
@@ -26,11 +26,9 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(data)
     };
   } catch (err) {
-    context.fail(err);
-
     return {
       statusCode: 500,
-      body: ''
+      body: 'Database was unable to read the results.'
     };
   }
 };

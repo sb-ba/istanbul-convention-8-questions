@@ -81,11 +81,12 @@ export default class Intro extends React.Component {
       <article>
         <style jsx>{style}</style>
 
-        {/* eslint-disable-next-line react/no-danger */}
+        {/* eslint-disable react/no-danger */}
         <strong
           className="question"
           dangerouslySetInnerHTML={{ __html: introQuestion }}
         />
+        {/* eslint-enable react/no-danger */}
 
         {/* eslint-disable-next-line react/no-danger */}
         <h1 className="title" dangerouslySetInnerHTML={{ __html: title }} />
