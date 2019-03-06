@@ -180,6 +180,8 @@ export default class Quiz extends Component {
               share={translate('resultsShare', translations)}
               compare={translate('resultsCompare', translations)}
               explainer={explainerResults[0]}
+              average={translate('resultsAverage', translations)}
+              you={translate('resultsYou', translations)}
             />
           </div>
         )}

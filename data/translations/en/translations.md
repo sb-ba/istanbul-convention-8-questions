@@ -14,6 +14,8 @@ resultsThankYou: Thank you
 resultsCompare: Compare your Answers with the Average
 resultsShare: Share
 resultsAction: Now you know a bit more about the Istanbul Convention – what can you do?
+resultsAverage: Average
+resultsYou: You
 
 councilOfEurope: Council of Europe
 

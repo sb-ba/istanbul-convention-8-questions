@@ -14,6 +14,8 @@ resultsThankYou: Danke
 resultsCompare: Vergleichen Sie Ihre Antworten mit Anderen
 resultsShare: Geben Sie Ihr Wissen an andere weiter
 resultsAction: Jetzt wissen Sie etwas mehr über die Istanbul-Konvention. Was können Sie tun?
+resultsAverage: Durchschnitt
+resultsYou: Du
 
 councilOfEurope: Europarat
 

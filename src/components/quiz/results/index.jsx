@@ -23,7 +23,9 @@ export default ({
   title,
   action,
   compare,
-  explainer
+  explainer,
+  average,
+  you
 }) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
@@ -80,12 +82,12 @@ export default ({
                         <Result
                           index={index}
                           value={userAnswers[id][index]}
-                          label="You"
+                          label={you}
                         />
                         <Result
                           index={index}
                           value={findAnswerResult(id, index + 1, data)}
-                          label="Average"
+                          label={average}
                         />
                       </div>
                     )}

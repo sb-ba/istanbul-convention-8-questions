@@ -34,6 +34,8 @@ const createLocalizedQuiz = (graphql, createPage) => {
               resultsCompare
               resultsShare
               resultsAction
+              resultsAverage
+              resultsYou
 
               councilOfEurope
               footerContact

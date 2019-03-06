@@ -14,6 +14,8 @@ resultsThankYou: MERCI !
 resultsCompare: COMPAREZ VOS RÉPONSES EN CONSULTANT LES STATISTIQUES
 resultsShare: Partager
 resultsAction: Maintenant que vous en savez un peu plus sur la Convention d’Istanbul, que pouvez-vous faire?
+resultsAverage: Moyenne
+resultsYou: Toi
 
 councilOfEurope: Conseil de l’Europe
 
