@@ -63,7 +63,9 @@ export default class Quiz extends Component {
       current: state.current - 1
     }));
 
-    persistAnswers(questionId, answers);
+    if (questionId && answers) {
+      persistAnswers(questionId, answers);
+    }
   };
 
   next = () => {
@@ -77,7 +79,9 @@ export default class Quiz extends Component {
       current: state.current + 1
     }));
 
-    persistAnswers(questionId, answers);
+    if (questionId && answers) {
+      persistAnswers(questionId, answers);
+    }
   };
 
   render() {
