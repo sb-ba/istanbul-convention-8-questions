@@ -9,6 +9,7 @@ export default css`
     font-family: ${fonts.openSans.family};
     font-size: 0.9rem;
     font-weight: ${fonts.openSans.weight.semibold};
+    z-index: 100;
   }
 
   ul {
