@@ -25,7 +25,8 @@ export default ({
   compare,
   explainer,
   average,
-  you
+  you,
+  share
 }) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
@@ -49,7 +50,7 @@ export default ({
         </div>
       </header>
 
-      <Share />
+      <Share share={share} />
 
       <h2 className="answers-title">{compare}</h2>
 
@@ -110,7 +111,7 @@ export default ({
 
       <h2 className="answers-title">{action}</h2>
 
-      <Share />
+      <Share share={share} />
 
       {/* eslint-disable react/no-danger */}
       <article
