@@ -2,25 +2,25 @@
 next: СЛЕДУЮЩАЯ
 previous: ПРЕДЫДУЩАЯ
 
-introQuestion: Как можно прекратить<br /> насилие в отношении женщин?
-introTitle: 8 вопросов <br /> на <br /> 8 марта
-introIntro: Fai scorrere la barra per posizionare le tue risposte
-introButtonLabel: Inizia
+introQuestion: Как мы можем прекратить<br/> насилие в отношении женщин?
+introTitle:  8 вопросов <br /> на <br /> 8 марта
+introIntro: Перемещайте ползунок, чтобы оценивать Ваши ответы
+introButtonLabel: Начало
 
-questionsTitle: Question
+questionsTitle: Вопрос
 
-resultsTitle: Results
-resultsThankYou: Grazie
-resultsCompare: Confronta le tue Risposte con la Media
-resultsShare: Condividi queste informazioni
-resultsAction: Adesso che conosci un po’ meglio la Convenzione di Istanbul, che cosa puoi fare?
-resultsAverage: Average
-resultsYou: You
+resultsTitle: Результаты
+resultsThankYou: Спасибо
+resultsCompare: Сравните Ваши ответы со средним показателем 
+resultsShare: Поделитесь информацией с другими
+resultsAction: Теперь вы знаете немного больше о Стамбульской конвенции - что Вы можете сделать?
+resultsAverage: Средний показатель
+resultsYou: Вы
 
-councilOfEurope: Council of Europe
+councilOfEurope: Совет Европы
 
-footerContact: Contact
-footerPrivacy: Privacy
-footerFollowUs:  Seguici sui social
-footerIstanbulConvention: Human Rights Channel - Istanbul Convention
+footerContact: Контакт
+footerPrivacy: Конфиденциальность
+footerFollowUs: Следите за нами в социальных сетях
+footerIstanbulConvention: Канал Прав Человека - Стамбульская Конвенция
 ---

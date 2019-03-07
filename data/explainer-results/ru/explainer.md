@@ -1,14 +1,16 @@
-**Verifica se il tuo paese ha ratificato la Convenzione di Istanbul**
-in caso contrario, perché non scrivere al tuo parlamentare?
+**Проверьте, ратифицировала ли Ваша страна  Стамбульскую конвенцию.**
 
-**Se vuoi avere maggiori informazioni sulla Convenzione di Istanbul**
+Если нет, то почему бы не написать Вашему члену Парламента?
 
-Visita il nostro website:
+**Если вы хотите больше узнать о Стамбульской конвенции**
+
+Посетите наши вебсайты:
 
 https://www.coe.int/conventionviolence
 https://www.coe.int/en/web/human-rights-channel/end-violence-against-women
 
-**Learn**
+**Обучайтесь**
 
-Our free on-line course is available here:
+Наш бесплатный онлайн курс можно найти здесь:
+
 https://www.coe.int/en/web/istanbul-convention/help-online-course
