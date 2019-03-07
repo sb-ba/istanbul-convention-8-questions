@@ -15,12 +15,12 @@ resultsCompare: COMPAREZ VOS RÉPONSES EN CONSULTANT LES STATISTIQUES
 resultsShare: Partager
 resultsAction: Maintenant que vous en savez un peu plus sur la Convention d’Istanbul, que pouvez-vous faire?
 resultsAverage: Moyenne
-resultsYou: Toi
+resultsYou: Vous
 
 councilOfEurope: Conseil de l’Europe
 
 footerContact: Contact
-footerPrivacy: Privacy
+footerPrivacy: Confidentialité
 footerFollowUs: Suivez-nous sur les réseaux sociaux
 footerIstanbulConvention: Chaîne des droits humains - Convention d’Istanbul
 ---
