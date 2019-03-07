@@ -4,15 +4,15 @@ previous: Zurück
 
 introQuestion: Wie stoppen wir<br /> Gewalt gegen Frauen?
 introTitle: 8 Fragen<br/> zum<br/> 8. März
-introIntro: Bewerten Sie durch Verschieben<br /> des Reglers Ihre Antworten
+introIntro: Verschieben Sie den Regler<br /> und gewichten Sie Ihre Antworten
 introButtonLabel: Start
 
 questionsTitle: Frage
 
 resultsTitle: Ergebnisse
 resultsThankYou: Danke
-resultsCompare: Vergleichen Sie Ihre Antworten mit Anderen
-resultsShare: Geben Sie Ihr Wissen an andere weiter
+resultsCompare: Vergleichen Sie Ihre Meinung mit Anderen
+resultsShare: Teilen
 resultsAction: Jetzt wissen Sie etwas mehr über die Istanbul-Konvention. Was können Sie tun?
 resultsAverage: Durchschnitt
 resultsYou: Du
